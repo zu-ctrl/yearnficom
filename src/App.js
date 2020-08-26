@@ -21,7 +21,7 @@ const emitter = Store.emitter
 const store = Store.store
 
 const App = () => {
-  const [theme, setTheme] = useState(localStorage.getItem('yearnfiTheme') || 'dark')
+  const [theme, setTheme] = useState('dark')
   const [lang, setLang] = useState('en')
   const [account, setAccount] = useState(store.getStore('account'))
   // const [] = useState('')
@@ -49,7 +49,7 @@ const App = () => {
   return (
     <ThemeProvider theme={currentTheme}>
       <IpfsRouter>
-        <BetaBanner isBeta />
+        <BetaBanner isBeta currentTheme={currentTheme} />
         <Main>
           <FloatingActions>
             <ThemeChooser theme={theme} setTheme={setTheme} />
@@ -60,11 +60,14 @@ const App = () => {
             <Route path='/vault'>
               <Vault account={account} setAccount={setAccount} />
             </Route>
+            <Route path='/zap'>
+              <Zap />
+            </Route>
             <Route path='/earn'>
               <Earn />
             </Route>
-            <Route path='/zap'>
-              <Zap />
+            <Route path='/cover'>
+              <Redirect to='/vault' />
             </Route>
             <Route path='/'>
               <Redirect to='/vault' />

@@ -1,9 +1,18 @@
 import React from 'react'
-import { BannerWrapper } from './style'
+import { BannerWrapper, BetaTitle } from './style'
 
-const BetaBanner = ({ isBeta }) => {
+import BetaIcon from '../icons/BetaIcon'
+
+const BetaBanner = ({ isBeta, currentTheme }) => {
+  const { blue } = currentTheme
+
   if (!isBeta) return null
-  return <BannerWrapper>This project is in beta. Use at your own risk.</BannerWrapper>
+  return (
+    <BannerWrapper>
+      <BetaIcon color={blue} />
+      <BetaTitle>This project is in beta. Use at your own risk.</BetaTitle>
+    </BannerWrapper>
+  )
 }
 
 export default BetaBanner
