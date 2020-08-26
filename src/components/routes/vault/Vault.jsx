@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 import {
   ERROR,
   GET_POOL_BALANCES,
@@ -28,7 +29,6 @@ const Vault = ({ t, account, setAccount }) => {
   const [snackbarMessage, setSnackbarMessage] = useState(null)
   const [value, setValue] = useState(1)
   const [refreshTimer, setRefreshTimer] = useState(null)
-  const [pyEarnData, setPyEarnData] = useState([])
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
@@ -58,7 +58,46 @@ const Vault = ({ t, account, setAccount }) => {
   }
 
   const balancesReturned = async () => {
-    setAssets(store.getStore('poolAssets'))
+    let updatedAssets = store.getStore('poolAssets')
+    // ADD GRAPHS TO ASSETS
+    updatedAssets = updatedAssets.map((asset) => {
+      const mapObj = {
+        YFI: 'yfi',
+        yCRV: 'ycurve',
+        DAI: 'stablecoin',
+        TUSD: 'stablecoin',
+        USDC: 'stablecoin',
+        USDT: 'stablecoin',
+        aLINK: 'link',
+        LINK: 'link',
+      }
+      asset.vaultGraphName = mapObj[asset.symbol]
+      return asset
+    })
+    // ADD PYEARN DATA TO ASSETS
+    try {
+      const {
+        body: { data: pyEarnArr },
+      } = (
+        await axios({
+          url: '/api/pyearn',
+          method: 'GET',
+        })
+      ).data
+      updatedAssets = assets.map((a) => {
+        const obj = pyEarnArr.find((d) => d.symbol === a.poolSymbol)
+        if (!obj) {
+          a.pyEarnData = { day: 'N/A', week: 'N/A', month: 'N/A', year: 'N/A' }
+        } else {
+          a.pyEarnData = { ...obj.pyEarnData }
+        }
+        return a
+      })
+    } catch (e) {
+      console.error('[pyearn]', e.toString())
+    }
+    console.log({ updatedAssets })
+    setAssets(updatedAssets)
     setRefreshTimer(setTimeout(refresh, 300000))
   }
 

@@ -15,7 +15,7 @@ const ProductInfo = ({ asset }) => {
           <b>{asset.symbol}</b>
           <div>{asset.description}</div>
         </div>
-        <PyEarnTable />
+        <PyEarnTable pyEarnData={asset.pyEarnData} />
       </div>
       <p>
         Deposit {asset.symbol} tokens in this Grow Vault to maximize profits with the best automated strategies for your

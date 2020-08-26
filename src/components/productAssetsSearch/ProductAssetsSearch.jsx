@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 
 const ProductAssetsSearch = ({ assets, setFilteredAssets }) => {
   const [query, setQuery] = useState('')
-  useEffect(() => {
+  const setFilteredAssetsCb = useCallback(() => {
     setFilteredAssets(
       assets.filter(
         (a) =>
@@ -10,7 +10,10 @@ const ProductAssetsSearch = ({ assets, setFilteredAssets }) => {
           a.description.toLowerCase().includes(query.toLowerCase())
       )
     )
-  }, [query])
+  }, [query, assets, setFilteredAssets])
+  useEffect(() => {
+    setFilteredAssetsCb()
+  }, [setFilteredAssetsCb])
   return (
     <div>
       <input type='text' onChange={(e) => setQuery(e.currentTarget.value)} />

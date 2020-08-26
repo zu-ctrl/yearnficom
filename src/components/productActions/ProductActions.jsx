@@ -10,8 +10,8 @@ const ProductActions = ({ currentAsset }) => {
       <ProductInfo asset={currentAsset} />
       <h2>DEPOSIT AND WITHDRAW</h2>
       <VaultActionForm asset={currentAsset} />
-      {/* <h2>VAULT STRATEGY</h2> */}
-      {/* <VaultBlockChart asset={currentAsset} /> */}
+      <h2>VAULT STRATEGY</h2>
+      <VaultBlockChart vaultGraphName={currentAsset.vaultGraphName} />
     </>
   )
 }
