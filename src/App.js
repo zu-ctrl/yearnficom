@@ -48,7 +48,7 @@ const App = () => {
   return (
     <ThemeProvider theme={currentTheme}>
       <IpfsRouter>
-        <BetaBanner isBeta />
+        <BetaBanner isBeta currentTheme={currentTheme} />
         <Main>
           <FloatingActions>
             <ThemeChooser theme={theme} setTheme={setTheme} />
@@ -56,17 +56,20 @@ const App = () => {
           </FloatingActions>
           <Menu currentTheme={currentTheme} />
           <Switch>
-            <Route path="/vault">
+            <Route path='/vault'>
               <Vault />
             </Route>
-            <Route path="/earn">
-              <Earn />
-            </Route>
-            <Route path="/zap">
+            <Route path='/zap'>
               <Zap />
             </Route>
-            <Route path="/">
-              <Redirect to="/vault" />
+            <Route path='/earn'>
+              <Earn />
+            </Route>
+            <Route path='/cover'>
+              <Redirect to='/vault' />
+            </Route>
+            <Route path='/'>
+              <Redirect to='/vault' />
             </Route>
           </Switch>
         </Main>
