@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 import IpfsRouter from 'ipfs-react-router'
 import { injected } from './stores/connectors'
-import { CONNECTION_CONNECTED } from './constants'
-import Store from './stores'
+import { CONNECTION_CONNECTED } from './constants/constants'
+import Store from './stores/store'
 import BetaBanner from './components/betaBanner/BetaBanner'
 import Main from './components/main/Main'
 import FloatingActions from './components/floatingActions/FloatingActions'
@@ -23,6 +23,7 @@ const store = Store.store
 const App = () => {
   const [theme, setTheme] = useState(localStorage.getItem('yearnfiTheme') || 'dark')
   const [lang, setLang] = useState('en')
+  const [account, setAccount] = useState(store.getStore('account'))
   // const [] = useState('')
   const currentTheme = theme === 'light' ? lightTheme : darkTheme
   useEffect(() => {
@@ -56,17 +57,17 @@ const App = () => {
           </FloatingActions>
           <Menu currentTheme={currentTheme} />
           <Switch>
-            <Route path="/vault">
-              <Vault />
+            <Route path='/vault'>
+              <Vault account={account} setAccount={setAccount} />
             </Route>
-            <Route path="/earn">
+            <Route path='/earn'>
               <Earn />
             </Route>
-            <Route path="/zap">
+            <Route path='/zap'>
               <Zap />
             </Route>
-            <Route path="/">
-              <Redirect to="/vault" />
+            <Route path='/'>
+              <Redirect to='/vault' />
             </Route>
           </Switch>
         </Main>
