@@ -22,7 +22,7 @@ const VaultActionForm = ({ asset, startLoading }) => {
   const [amountError, setAmountError] = useState(false)
   const [redeemAmount, setRedeemAmount] = useState('')
   const [redeemAmountError, setRedeemAmountError] = useState(false)
-  const [account, setAccount] = useState(store.getStore('account'))
+  const [account] = useState(store.getStore('account'))
   const [leftSlider, setLeftSlider] = useState(0)
   const [rightSlider, setRightSlider] = useState(0)
   const [loading, setLoading] = useState(false)

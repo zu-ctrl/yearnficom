@@ -27,7 +27,6 @@ const Vault = ({ t, account, setAccount }) => {
   const [modalOpen, setModalOpen] = useState(false)
   const [snackbarType, setSnackbarType] = useState(null)
   const [snackbarMessage, setSnackbarMessage] = useState(null)
-  const [value, setValue] = useState(1)
   const [refreshTimer, setRefreshTimer] = useState(null)
   const [loading, setLoading] = useState(false)
 
@@ -51,7 +50,7 @@ const Vault = ({ t, account, setAccount }) => {
       emitter.removeListener(CONNECTION_DISCONNECTED, connectionDisconnected)
       emitter.removeListener(POOL_BALANCES_RETURNED, balancesReturned)
     }
-  }, [])
+  }, []) // eslint-disable-line
 
   const refresh = () => {
     dispatcher.dispatch({ type: GET_POOL_BALANCES, content: {} })
