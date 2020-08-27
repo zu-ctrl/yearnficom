@@ -1,27 +1,31 @@
 import React from 'react'
 import PyEarnTable from '../pyEarnTable/PyEarnTable'
+import { Title, Logo, Description, Container, FlexStart, InfoText, LinkInfo } from './style'
 
 const ProductInfo = ({ asset }) => {
   return (
-    <>
-      <div>
+    <Container>
+      <FlexStart>
         <div>
-          <img
-            alt=''
-            src={require('../../assets/' + asset.symbol + '-logo.png')}
-            height={'24px'}
-            style={asset.disabled ? { filter: 'grayscale(100%)' } : {}}
-          />
-          <b>{asset.symbol}</b>
-          <div>{asset.description}</div>
+          <Logo>
+            <img
+              alt=''
+              src={require('../../assets/' + asset.symbol + '-logo.png')}
+              height={'24px'}
+              style={asset.disabled ? { filter: 'grayscale(100%)' } : {}}
+            />
+            <Title>{asset.symbol}</Title>
+          </Logo>
+          <Description>{asset.description}</Description>
         </div>
         <PyEarnTable pyEarnData={asset.pyEarnData} />
-      </div>
-      <p>
+      </FlexStart>
+      <InfoText>
         Deposit {asset.symbol} tokens in this Grow Vault to maximize profits with the best automated strategies for your
         asset at any time.
-      </p>
-    </>
+      </InfoText>
+      <LinkInfo href='#'>Show tutorial...</LinkInfo>
+    </Container>
   )
 }
 

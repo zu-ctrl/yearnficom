@@ -13,6 +13,8 @@ import {
 import Store from '../../stores/store'
 import { TextField, Slider } from '@material-ui/core'
 
+import { Container, FormContainer, InputBox } from './style'
+
 const emitter = Store.emitter
 const dispatcher = Store.dispatcher
 const store = Store.store
@@ -112,19 +114,22 @@ const VaultActionForm = ({ asset, startLoading }) => {
   }
 
   return (
-    <div>
-      <div>
+    <Container>
+      <FormContainer>
         <div>
-          <TextField
-            fullWidth
-            id='amount'
-            variant='filled'
-            value={amount}
-            error={amountError}
-            onChange={handleOnChange}
-            disabled={loading || asset.disabled}
-            placeholder='0.00'
-          />
+          <InputBox>
+            <TextField
+              fullWidth
+              id='amount'
+              variant='filled'
+              value={amount}
+              error={amountError}
+              onChange={handleOnChange}
+              disabled={loading || asset.disabled}
+              placeholder='0.00'
+            />
+          </InputBox>
+
           {!asset.disabled && (
             <div>
               <div>
@@ -176,16 +181,18 @@ const VaultActionForm = ({ asset, startLoading }) => {
           <div>Upon deposit, assets are wrapped as yTokens in your wallet representing liquidity provided</div>
         </div>
         <div>
-          <TextField
-            fullWidth
-            id='redeemAmount'
-            value={redeemAmount}
-            error={redeemAmountError}
-            onChange={handleOnChange}
-            disabled={loading}
-            placeholder='0.00'
-            variant='filled'
-          />
+          <InputBox>
+            <TextField
+              fullWidth
+              id='redeemAmount'
+              value={redeemAmount}
+              error={redeemAmountError}
+              onChange={handleOnChange}
+              disabled={loading}
+              placeholder='0.00'
+              variant='filled'
+            />
+          </InputBox>
           <div>
             <div>
               {'Deployed: ' +
@@ -223,8 +230,8 @@ const VaultActionForm = ({ asset, startLoading }) => {
           </div>
           <div>There is a 0.5% withdrawal fee on all vaults, and a 5% performance fee on subsidized gas.</div>
         </div>
-      </div>
-    </div>
+      </FormContainer>
+    </Container>
   )
 }
 

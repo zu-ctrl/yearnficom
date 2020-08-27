@@ -7,9 +7,13 @@ const ProductAssets = ({ assets, currentAsset, setCurrentAsset, currentTheme }) 
   const [filteredAssets, setFilteredAssets] = useState(assets)
   return (
     <Container>
-      <h2>ProductAssets</h2>
       <ProductAssetsSearch assets={assets} setFilteredAssets={setFilteredAssets} currentTheme={currentTheme} />
-      <ProductAssetsList assets={filteredAssets} currentAsset={currentAsset} setCurrentAsset={setCurrentAsset} />
+      <ProductAssetsList
+        assets={filteredAssets}
+        currentAsset={currentAsset}
+        setCurrentAsset={setCurrentAsset}
+        currentTheme={currentTheme}
+      />
     </Container>
   )
 }

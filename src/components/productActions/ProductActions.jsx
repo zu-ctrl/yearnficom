@@ -2,17 +2,17 @@ import React from 'react'
 import ProductInfo from '../productInfo/ProductInfo'
 import VaultActionForm from '../vaultActionForm/VaultActionForm'
 import VaultBlockChart from '../vaultBlockChart/VaultBlockChart'
+import { Wrapper, Title } from './style'
 
 const ProductActions = ({ currentAsset }) => {
   return (
-    <>
-      <div>ProductActions</div>
+    <Wrapper>
       <ProductInfo asset={currentAsset} />
-      <h2>DEPOSIT AND WITHDRAW</h2>
+      <Title>DEPOSIT AND WITHDRAW</Title>
       <VaultActionForm asset={currentAsset} />
-      <h2>VAULT STRATEGY</h2>
+      <Title>VAULT STRATEGY</Title>
       <VaultBlockChart vaultGraphName={currentAsset.vaultGraphName} />
-    </>
+    </Wrapper>
   )
 }
 

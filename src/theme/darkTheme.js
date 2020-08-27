@@ -10,6 +10,12 @@ export default {
   blackMenuBackground: '#111A21',
   linearIcon: '#69C0FF',
   linearMiddleIcon: '#40A9FF',
+  whiteSmoke: ' #f3f4f5',
+  greenApy: '#95DE64',
+  apyRowBackground: '#354154',
+  infoLink: '#40a9ff',
+  productBackground: '#293140',
+  assetListShadow: 'inset 0px -100px 23px -36px rgba(17,26,33,1);',
   menuHeader: {
     gradient: 'radial-gradient(43.43% 11.59% at 50% 100%, rgba(64, 169, 255, 0.16) 0%, rgba(17, 26, 33, 0.16) 100%);',
     buttonBackground: '#293140',
@@ -22,7 +28,7 @@ export default {
       'linear-gradient(140deg, rgba(34,91,145,1) 0%, rgba(43,70,92,1) 40%, rgba(43,70,92,1) 60%, rgba(36,81,128,1) 100%);',
     color: '#fff',
     shadow: '0px 4px 12px rgba(0, 0, 0, 0.25)',
-    ripples: 'rgba(255, 255, 255, 0.10)',
+    ripples: 'rgba(255, 255, 255, 0.05)',
     resourceColor: '#E3E4E6',
     resourceBg: '#293140',
   },
@@ -40,4 +46,6 @@ export default {
     searchBackground: '#1D2430',
     assetBackground: '#1D2430',
   },
+  formBackground: '#1d2430',
+  formShadow: '0px 0px 30px #111a21',
 }
