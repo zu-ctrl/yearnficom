@@ -58,7 +58,7 @@ const App = () => {
           <Menu currentTheme={currentTheme} />
           <Switch>
             <Route path='/vault'>
-              <Vault account={account} setAccount={setAccount} />
+              <Vault account={account} currentTheme={currentTheme} setAccount={setAccount} />
             </Route>
             <Route path='/zap'>
               <Zap />

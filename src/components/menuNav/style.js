@@ -51,6 +51,6 @@ export const ResourceItem = styled.a`
     background: ${(p) => p.theme.menu.resourceBg};
   }
 `
-export const WrapperResource = styled(Wrapper)`
-  padding: 20px 16px 15px;
+export const WrapperResource = styled.div`
+  padding: 20px 16px 20px;
 `

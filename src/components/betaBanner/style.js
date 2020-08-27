@@ -16,3 +16,8 @@ export const BetaTitle = styled.h5`
   color: ${(p) => p.theme.white};
   margin-left: 9px;
 `
+export const FlexCenter = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: -1px;
+`
