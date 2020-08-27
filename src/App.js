@@ -24,6 +24,7 @@ const App = () => {
   const [theme, setTheme] = useState('dark')
   const [lang, setLang] = useState('en')
   const [account, setAccount] = useState(store.getStore('account'))
+  const [isBeta, setIsBeta] = useState(localStorage.getItem('yearnfiBeta') !== 'false')
   // const [] = useState('')
   const currentTheme = theme === 'light' ? lightTheme : darkTheme
   useEffect(() => {
@@ -49,7 +50,7 @@ const App = () => {
   return (
     <ThemeProvider theme={currentTheme}>
       <IpfsRouter>
-        <BetaBanner isBeta currentTheme={currentTheme} />
+        <BetaBanner isBeta={isBeta} setIsBeta={setIsBeta} currentTheme={currentTheme} />
         <Main>
           <FloatingActions>
             <ThemeChooser theme={theme} setTheme={setTheme} />
