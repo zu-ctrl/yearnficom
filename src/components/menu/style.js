@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   background: ${(p) => p.theme.blackMenuBackground};
 `
 export const ScrollContainer = styled.div`
-  height: calc(100vh - 40px);
+  height: ${(p) => (p.isBeta ? 'calc(100vh - 40px)' : '100vh')};
   overflow-y: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;

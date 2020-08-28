@@ -181,15 +181,22 @@ const App = ({ t }) => {
         {!account || !account.address ? (
           <Login setModalOpen={setModalOpen} />
         ) : (
-          <Main>
+          <Main isBeta={isBeta}>
             <FloatingActions>
               <ThemeChooser theme={theme} setTheme={setTheme} />
               <LangChooser lang={lang} setLang={setLang} />
             </FloatingActions>
-            <Menu currentTheme={currentTheme} account={account} setModalOpen={setModalOpen} assets={assets} />
+            <Menu
+              isBeta={isBeta}
+              currentTheme={currentTheme}
+              account={account}
+              setModalOpen={setModalOpen}
+              assets={assets}
+            />
             <Switch>
               <Route path='/vault'>
                 <Vault
+                  isBeta={isBeta}
                   account={account}
                   assets={assets}
                   currentTheme={currentTheme}

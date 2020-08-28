@@ -4,17 +4,18 @@ import ProductAssets from '../../productAssets/ProductAssets'
 import ProductActions from '../../productActions/ProductActions'
 import { Container, MainWrapper, Shadow } from './style'
 
-const Vault = ({ t, currentTheme, assets, currentAsset, setCurrentAsset }) => {
+const Vault = ({ t, currentTheme, assets, currentAsset, setCurrentAsset, isBeta }) => {
   return (
     <Container>
       <MainWrapper>
         <ProductAssets
+          isBeta={isBeta}
           assets={assets}
           currentAsset={currentAsset}
           currentTheme={currentTheme}
           setCurrentAsset={setCurrentAsset}
         />
-        <ProductActions currentAsset={currentAsset} />
+        <ProductActions isBeta={isBeta} currentAsset={currentAsset} />
       </MainWrapper>
       <Shadow />
     </Container>

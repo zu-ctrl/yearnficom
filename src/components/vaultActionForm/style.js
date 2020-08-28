@@ -162,15 +162,11 @@ export const SliderContainer = styled.div`
     }
   }
 `
-export const Percent = styled.div`
+export const PercentContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-family: 'PT Sans';
-  font-size: 12px;
-  line-height: 24px;
   width: 100%;
-  color: ${(p) => p.theme.slider.blue};
   div:nth-child(2n) {
     margin-right: -2px;
   }
@@ -183,4 +179,11 @@ export const Percent = styled.div`
   div:last-of-type {
     margin-right: -6px;
   }
+`
+export const Percent = styled.div`
+  font-family: 'PT Sans';
+  font-size: 12px;
+  line-height: 24px;
+  color: ${(p) => p.theme.slider.blue};
+  cursor: pointer;
 `

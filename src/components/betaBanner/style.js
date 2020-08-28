@@ -23,3 +23,12 @@ export const FlexCenter = styled.div`
   margin-top: -1px;
   position: relative;
 `
+export const Close = styled.div`
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  display: flex;
+  padding: 4px;
+  cursor: pointer;
+  transform: translateY(-50%);
+`

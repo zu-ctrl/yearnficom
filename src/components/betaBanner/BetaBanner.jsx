@@ -1,11 +1,12 @@
 import React from 'react'
 import BetaLinearIcon from '../icons/BetaLinearIcon'
-import { BannerWrapper, BetaTitle, FlexCenter } from './style'
+import CloseIcon from '../icons/CloseIcon'
+import { BannerWrapper, BetaTitle, FlexCenter, Close } from './style'
 
 import BetaIcon from '../icons/BetaIcon'
 
 const BetaBanner = ({ isBeta, setIsBeta, currentTheme }) => {
-  const { blue, linearIcon } = currentTheme
+  const { blue, linearIcon, closeIcon } = currentTheme
   const handleCloseBetaBanner = () => {
     setIsBeta(false)
     localStorage.setItem('yearnfiBeta', 'false')
@@ -16,10 +17,10 @@ const BetaBanner = ({ isBeta, setIsBeta, currentTheme }) => {
       <BannerWrapper>
         <BetaIcon color={blue} />
         <BetaTitle>This project is in beta. Use at your own risk.</BetaTitle>
+        <Close onClick={handleCloseBetaBanner}>
+          <CloseIcon color={closeIcon} />
+        </Close>
       </BannerWrapper>
-      <span onClick={handleCloseBetaBanner} style={{ color: 'white', cursor: 'pointer' }}>
-        ⤫
-      </span>
       <FlexCenter>
         <BetaLinearIcon color={linearIcon} />
       </FlexCenter>

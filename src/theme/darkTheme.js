@@ -2,6 +2,7 @@ export default {
   iconColor: '#BAE7FF',
   loginIconColor: '#95DE64',
   iconGlowColor: '#40A9FF',
+  closeIcon: '#E6F7FF',
   betaBackgroundGradient:
     'radial-gradient(22.99% 100% at 50.42% 100%, rgba(64, 169, 255, 0.3) 0%, rgba(64, 169, 255, 0) 100%), #293140',
   betaBoxShadow: '0px 4px 12px rgba(0, 0, 0, 0.25)',
@@ -24,8 +25,7 @@ export default {
     colorTotal: '#d5d7d9',
   },
   menu: {
-    gradient:
-      'linear-gradient(140deg, rgba(34,91,145,1) 0%, rgba(43,70,92,1) 40%, rgba(43,70,92,1) 60%, rgba(36,81,128,1) 100%);',
+    gradient: 'linear-gradient(100.35deg, rgba(54, 158, 255, 0.5) 0%, rgba(9, 109, 217, 0.5) 100%);',
     color: '#fff',
     shadow: '0px 4px 12px rgba(0, 0, 0, 0.25)',
     ripples: 'rgba(255, 255, 255, 0.05)',
