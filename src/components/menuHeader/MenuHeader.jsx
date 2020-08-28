@@ -1,5 +1,6 @@
 import React from 'react'
 import Ripples from 'react-ripples'
+import Skeleton from '@material-ui/lab/Skeleton'
 import LoginIcon from '../icons/LoginIcon'
 import YearnIcon from '../icons/YearnIcon'
 import LinearIcon from '../icons/LinearIcon'
@@ -15,7 +16,7 @@ import {
   ButtonWrapper,
 } from './style'
 
-const MenuHeader = ({ currentTheme, account, setModalOpen }) => {
+const MenuHeader = ({ currentTheme, account, setModalOpen, assets }) => {
   const { loginIconColor, linearIcon, menu } = currentTheme
   return (
     <>
@@ -38,8 +39,12 @@ const MenuHeader = ({ currentTheme, account, setModalOpen }) => {
           </Ripples>
         </ButtonWrapper>
         <TextTotal>Your total deployed balance</TextTotal>
-        <TextBlueBalance>$1,000,000,000.00 USD</TextBlueBalance>
-        <TextWhiteBalance>10,000,000.0000 ETH</TextWhiteBalance>
+        <TextBlueBalance>
+          {assets && typeof assets[0].balance === 'number' ? `${assets[0].balance} ${assets[0].symbol}` : <Skeleton />}
+        </TextBlueBalance>
+        <TextWhiteBalance>
+          {assets && typeof assets[1].balance === 'number' ? `${assets[1].balance} ${assets[1].symbol}` : <Skeleton />}
+        </TextWhiteBalance>
       </Wrapper>
       <FlexCenter>
         <LinearIcon color={linearIcon} />

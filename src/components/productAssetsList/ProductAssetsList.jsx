@@ -37,7 +37,9 @@ const ProductAssetsList = ({ assets, currentAsset, setCurrentAsset, currentTheme
                   </Logo>
                   <Apy>
                     APY
-                    <ApyDescription>{asset.apy ? `${asset.apy.toFixed(2)}%` : <Skeleton />}</ApyDescription>
+                    <ApyDescription>
+                      {asset.pyEarnData ? `${(+asset.pyEarnData.year).toFixed(2)}%` : <Skeleton />}
+                    </ApyDescription>
                   </Apy>
                 </WrapContainer>
 
