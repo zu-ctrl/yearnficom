@@ -156,21 +156,32 @@ const VaultActionForm = ({ asset, startLoading }) => {
               marks
               min={0}
               max={100}
+              valueLabelDisplay='on'
               disabled={loading || asset.disabled}
               onChange={(_, value) => {
                 setLeftSlider(value)
                 updateAmount(value)
               }}
             />
-            <Percent>{leftSlider}%</Percent>
           </SliderContainer>
+          <Percent>
+            <div>0%</div>
+            <div>25%</div>
+            <div>50%</div>
+            <div>75%</div>
+            <div>100%</div>
+          </Percent>
           <ButtonWrapper>
             <ActionButton
               disabled={loading || !account.address || asset.balance <= 0 || asset.depositDisabled === true}
               onClick={onDeposit}
             >
               <img src={require(`../../assets/ico-deposit.svg`)} alt='' />
-              <ButtonText>Deposit</ButtonText>
+              <ButtonText
+                disabled={loading || !account.address || asset.balance <= 0 || asset.depositDisabled === true}
+              >
+                Deposit
+              </ButtonText>
             </ActionButton>
             {asset.version === 2 && (
               <ActionButton
@@ -178,7 +189,11 @@ const VaultActionForm = ({ asset, startLoading }) => {
                 onClick={onDepositAll}
               >
                 <img src={require(`../../assets/ico-deposit.svg`)} alt='' />
-                <ButtonText>Deposit All</ButtonText>
+                <ButtonText
+                  disabled={loading || !account.address || asset.balance <= 0 || asset.depositDisabled === true}
+                >
+                  Deposit All
+                </ButtonText>
               </ActionButton>
             )}
           </ButtonWrapper>
@@ -215,23 +230,38 @@ const VaultActionForm = ({ asset, startLoading }) => {
               marks
               min={0}
               max={100}
+              valueLabelDisplay='on'
               disabled={loading || asset.disabled}
               onChange={(_, value) => {
                 setRightSlider(value)
                 updateRedeemAmount(value)
               }}
             />
-            <Percent>{rightSlider}%</Percent>
           </SliderContainer>
+          <Percent>
+            <div>0%</div>
+            <div>25%</div>
+            <div>50%</div>
+            <div>75%</div>
+            <div>100%</div>
+          </Percent>
           <ButtonWrapper>
             <ActionButton disabled={loading || !account.address || asset.pooledBalance <= 0} onClick={onWithdraw}>
               <img src={require(`../../assets/ico-withdraw.svg`)} alt='' />
-              <ButtonText>Withdraw</ButtonText>
+              <ButtonText
+                disabled={loading || !account.address || asset.balance <= 0 || asset.depositDisabled === true}
+              >
+                Withdraw
+              </ButtonText>
             </ActionButton>
             {asset.version === 2 && (
               <ActionButton disabled={loading || !account.address || asset.pooledBalance <= 0} onClick={onWithdrawAll}>
                 <img src={require(`../../assets/ico-withdraw.svg`)} alt='' />
-                <ButtonText>Withdraw All</ButtonText>
+                <ButtonText
+                  disabled={loading || !account.address || asset.balance <= 0 || asset.depositDisabled === true}
+                >
+                  Withdraw All
+                </ButtonText>
               </ActionButton>
             )}
           </ButtonWrapper>

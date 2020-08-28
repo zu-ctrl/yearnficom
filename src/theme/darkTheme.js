@@ -51,11 +51,14 @@ export default {
   formBorder: '1px solid #40a9ff',
   formInputShadow: '0px 0px 14px rgba(64, 169, 255, 0.6)',
   actionButton: {
-    bg: 'linear-gradient(113.39deg, #1f81d1 -13.96%, #0ea1a1 120.54%)',
+    bg: 'linear-gradient(100.35deg, #369EFF 0%, #096DD9 100%);',
     shadow: '0px 0px 14px rgba(135, 232, 222, 0.35), inset 0px 1px 1px rgba(255, 255, 255, 0.4)',
+    disabledBg: '#1a202b',
+    disabledShadow: '#111A21',
   },
   slider: {
     rail: '#394861',
     track: 'linear-gradient(113.39deg, #1F81D1 -13.96%, #0EA1A1 120.54%)',
+    blue: '#40a9ff',
   },
 }

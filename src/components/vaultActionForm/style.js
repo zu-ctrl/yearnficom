@@ -69,15 +69,15 @@ export const Description = styled.p`
   margin-top: 16px;
 `
 export const ActionButton = styled.div`
-  background: ${(p) => p.theme.actionButton.bg};
-  box-shadow: ${(p) => p.theme.actionButton.shadow};
+  background: ${(p) => (p.disabled ? p.theme.actionButton.disabledBg : p.theme.actionButton.bg)};
+  box-shadow: ${(p) => (p.disabled ? p.theme.actionButton.disabledShadow : p.theme.actionButton.shadow)};
   border-radius: 4px;
   display: flex;
   align-items: center;
-  cursor: pointer;
+  cursor: ${(p) => (p.disabled ? 'not-allowed' : 'pointer')};
   padding: 6px 3px;
   justify-content: center;
-  margin: 16px 5px 0;
+  margin: 20px 5px 0;
   width: 100%;
   :last-of-type {
     margin-right: 0;
@@ -95,13 +95,15 @@ export const ButtonText = styled.p`
   letter-spacing: 0.02em;
   text-transform: uppercase;
   margin-left: 8px;
-  color: ${(p) => p.theme.white};
+  color: ${(p) => (p.disabled ? p.theme.whiteSmoke : p.theme.white)};
 `
 export const ButtonWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  margin-top: 10px;
 `
 export const SliderContainer = styled.div`
+  width: 97%;
   margin-top: 40px;
   .MuiSlider-rail {
     height: 8px;
@@ -144,14 +146,41 @@ export const SliderContainer = styled.div`
       visibility: visible;
     }
   }
+  .PrivateValueLabel-label-5 {
+    font-family: 'PT Sans';
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: ${(p) => p.theme.white};
+    text-shadow: 0px 0px 10px #40a9ff;
+    margin-left: -5px;
+    margin-bottom: -19px;
+    ::after {
+      content: '%';
+    }
+  }
 `
-export const Percent = styled.p`
+export const Percent = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   font-family: 'PT Sans';
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 22px;
-  text-align: center;
-  letter-spacing: 0.02em;
-  color: ${(p) => p.theme.white};
-  text-shadow: 0px 0px 10px #40a9ff;
+  font-size: 12px;
+  line-height: 24px;
+  width: 100%;
+  color: ${(p) => p.theme.slider.blue};
+  div:nth-child(2n) {
+    margin-right: -2px;
+  }
+  div:nth-child(3n) {
+    margin-right: -2px;
+  }
+  div:nth-child(4n) {
+    margin-right: -10px;
+  }
+  div:last-of-type {
+    margin-right: -6px;
+  }
 `
