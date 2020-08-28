@@ -7,6 +7,7 @@ export const BannerWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 `
 export const BetaTitle = styled.h5`
   font-family: 'PT Sans';
@@ -20,4 +21,5 @@ export const FlexCenter = styled.div`
   display: flex;
   justify-content: center;
   margin-top: -1px;
+  position: relative;
 `

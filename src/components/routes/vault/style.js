@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  max-width: 30%;
   width: 100%;
+`
+export const MainWrapper = styled.div`
+  display: flex;
 `

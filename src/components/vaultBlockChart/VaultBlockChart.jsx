@@ -1,16 +1,17 @@
 import React from 'react'
 import Skeleton from '@material-ui/lab/Skeleton'
+import { Wrapper } from './style'
 
-const vaultBlockChart = ({ vaultGraphName }) => {
+const VaultBlockChart = ({ vaultGraphName }) => {
   return (
-    <div>
+    <Wrapper>
       {!vaultGraphName ? (
         <Skeleton animation='wave' variant='rect' style={{ height: '200px' }} />
       ) : (
         <img alt='' src={require(`../../assets/graph-${vaultGraphName}.png`)} />
       )}
-    </div>
+    </Wrapper>
   )
 }
 
-export default vaultBlockChart
+export default VaultBlockChart

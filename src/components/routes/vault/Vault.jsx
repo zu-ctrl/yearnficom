@@ -16,7 +16,7 @@ import Loader from '../../common/loader/Loader'
 import UnlockModal from '../../unlock/unlockModal'
 import ProductAssets from '../../productAssets/ProductAssets'
 import ProductActions from '../../productActions/ProductActions'
-import { Container } from './style'
+import { Container, MainWrapper } from './style'
 
 const emitter = Store.emitter
 const dispatcher = Store.dispatcher
@@ -140,17 +140,24 @@ const Vault = ({ t, account, setAccount, currentTheme }) => {
 
   return (
     <Container>
-      <h1>vault route</h1>
-      <h2>account: {account.address}</h2>
-      <h2>asset: {currentAsset.symbol}</h2>
-      <button onClick={() => setModalOpen(true)}>login</button>
-      <ProductAssets
-        assets={assets}
-        currentAsset={currentAsset}
-        currentTheme={currentTheme}
-        setCurrentAsset={setCurrentAsset}
-      />
-      <ProductActions currentAsset={currentAsset} />
+      {account.address === undefined ? (
+        <>
+          <h1>vault route</h1>
+          <h2>account: {account.address}</h2>
+          <h2>asset: {currentAsset.symbol}</h2>
+          <button onClick={() => setModalOpen(true)}>login</button>
+        </>
+      ) : (
+        <MainWrapper>
+          <ProductAssets
+            assets={assets}
+            currentAsset={currentAsset}
+            currentTheme={currentTheme}
+            setCurrentAsset={setCurrentAsset}
+          />
+          <ProductActions currentAsset={currentAsset} />
+        </MainWrapper>
+      )}
       {modalOpen && <UnlockModal closeModal={() => setModalOpen(false)} modalOpen={modalOpen} />}
       {snackbarMessage && <Snackbar type={snackbarType} message={snackbarMessage} open={true} />} {/* TODO */}
       {loading && <Loader />}
