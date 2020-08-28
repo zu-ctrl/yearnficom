@@ -1,5 +1,6 @@
 export default {
   iconColor: '#BAE7FF',
+  loginIconColor: '#95DE64',
   iconGlowColor: '#40A9FF',
   betaBackgroundGradient:
     'radial-gradient(22.99% 100% at 50.42% 100%, rgba(64, 169, 255, 0.3) 0%, rgba(64, 169, 255, 0) 100%), #293140',
@@ -31,5 +32,12 @@ export default {
       'radial-gradient(52.28% 20.49% at 50% 0%, rgba(64, 169, 255, 0.16) 0%, rgba(17, 26, 33, 0.16) 100%), #111a21',
     socialColor: '#818FA6',
     color: '#818FA6',
+    shadow: '-10px -55px 33px -11px #111a21',
+  },
+  searchIcon: '#BBBDBF',
+  vault: {
+    searchText: '#bbbdbf',
+    searchBackground: '#1D2430',
+    assetBackground: '#1D2430',
   },
 }

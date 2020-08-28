@@ -36,8 +36,7 @@ export const Item = styled.a`
   text-align: center;
 `
 export const Shadow = styled.div`
-  box-shadow: -10px -48px 33px -11px #111a21;
+  box-shadow: ${(p) => p.theme.footer.shadow};
   overflow: visible;
   position: relative;
 `
-export const Gradient = styled.div``

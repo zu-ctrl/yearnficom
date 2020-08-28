@@ -1,6 +1,11 @@
 import React, { useState, useEffect, useCallback } from 'react'
+import SearchIcon from '../icons/SearchIcon'
+import FilterIcon from '../icons/FilterIcon'
 
-const ProductAssetsSearch = ({ assets, setFilteredAssets }) => {
+import { Container, InputContainer, Input } from './style'
+
+const ProductAssetsSearch = ({ assets, setFilteredAssets, currentTheme }) => {
+  const { searchIcon } = currentTheme
   const [query, setQuery] = useState('')
   const setFilteredAssetsCb = useCallback(() => {
     setFilteredAssets(
@@ -15,9 +20,13 @@ const ProductAssetsSearch = ({ assets, setFilteredAssets }) => {
     setFilteredAssetsCb()
   }, [setFilteredAssetsCb])
   return (
-    <div>
-      <input type='text' onChange={(e) => setQuery(e.currentTarget.value)} />
-    </div>
+    <Container>
+      <InputContainer>
+        <SearchIcon color={searchIcon} />
+        <Input type='text' placeholder='Search' onChange={(e) => setQuery(e.currentTarget.value)} />
+      </InputContainer>
+      <FilterIcon color={searchIcon} />
+    </Container>
   )
 }
 

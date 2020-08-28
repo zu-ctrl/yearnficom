@@ -10,11 +10,18 @@ export const LoginBtn = styled.div`
   border-radius: 4px;
   display: flex;
   align-items: center;
+  justify-content: center;
   margin: 0 auto;
   width: 100%;
-  max-width: 183px;
-  padding: 10px 15px;
+  max-width: 127px;
+  padding: 0 10px 0 0;
   cursor: pointer;
+`
+export const ButtonWrapper = styled.div`
+  max-width: 137px;
+  width: 100%;
+  margin: 16px auto 0;
+  border-radius: 4px;
 `
 export const ButtonText = styled.p`
   font-family: 'PT Sans';
@@ -23,7 +30,6 @@ export const ButtonText = styled.p`
   line-height: 22px;
   letter-spacing: 0.02em;
   color: ${(p) => p.theme.menuHeader.colorButton};
-  margin-left: 12px;
 `
 export const FlexCenter = styled.div`
   display: flex;

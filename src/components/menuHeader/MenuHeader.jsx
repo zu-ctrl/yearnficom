@@ -1,27 +1,36 @@
 import React from 'react'
 import Ripples from 'react-ripples'
-import WalletIcon from '../icons/WalletIcon'
+import LoginIcon from '../icons/LoginIcon'
 import YearnIcon from '../icons/YearnIcon'
 import LinearIcon from '../icons/LinearIcon'
 
-import { Wrapper, LoginBtn, ButtonText, FlexCenter, TextTotal, TextBlueBalance, TextWhiteBalance } from './style'
+import {
+  Wrapper,
+  LoginBtn,
+  ButtonText,
+  FlexCenter,
+  TextTotal,
+  TextBlueBalance,
+  TextWhiteBalance,
+  ButtonWrapper,
+} from './style'
 
 const MenuHeader = ({ currentTheme }) => {
-  const { iconColor, iconGlowColor, linearIcon, menu } = currentTheme
+  const { loginIconColor, linearIcon, menu } = currentTheme
   return (
     <>
       <Wrapper>
         <FlexCenter>
           <YearnIcon />
         </FlexCenter>
-        <div style={{ marginTop: '16px' }}>
+        <ButtonWrapper>
           <Ripples color={menu.ripples}>
             <LoginBtn>
-              <WalletIcon color={iconColor} glowColor={iconGlowColor} />
+              <LoginIcon color={loginIconColor} />
               <ButtonText>0xXXX...XXXX</ButtonText>
             </LoginBtn>
           </Ripples>
-        </div>
+        </ButtonWrapper>
         <TextTotal>Your total deployed balance</TextTotal>
         <TextBlueBalance>$1,000,000,000.00 USD</TextBlueBalance>
         <TextWhiteBalance>10,000,000.0000 ETH</TextWhiteBalance>
