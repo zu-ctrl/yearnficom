@@ -62,10 +62,10 @@ const App = () => {
               <Vault account={account} currentTheme={currentTheme} setAccount={setAccount} />
             </Route>
             <Route path='/zap'>
-              <Zap />
+              <Redirect to='/vault' />
             </Route>
             <Route path='/earn'>
-              <Earn />
+              <Redirect to='/vault' />
             </Route>
             <Route path='/cover'>
               <Redirect to='/vault' />

@@ -31,7 +31,7 @@ const emitter = Store.emitter
 const dispatcher = Store.dispatcher
 const store = Store.store
 
-const VaultActionForm = ({ asset, startLoading }) => {
+const VaultActionForm = ({ asset }) => {
   const [amount, setAmount] = useState('')
   const [amountError, setAmountError] = useState(false)
   const [redeemAmount, setRedeemAmount] = useState('')
@@ -55,6 +55,10 @@ const VaultActionForm = ({ asset, startLoading }) => {
       emitter.removeListener(ERROR, errorReturned)
     }
   }, [])
+
+  const startLoading = () => {
+    setLoading(true)
+  }
 
   const depositReturned = () => {
     setLoading(false)
