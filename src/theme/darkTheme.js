@@ -61,4 +61,5 @@ export default {
     track: 'linear-gradient(113.39deg, #1F81D1 -13.96%, #0EA1A1 120.54%)',
     blue: '#40a9ff',
   },
+  mainShadow: '0px -40px 33px 21px #111a21',
 }

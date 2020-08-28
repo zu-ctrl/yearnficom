@@ -1,5 +1,5 @@
 import React from 'react'
-import LinearBetaIcon from '../icons/LinearBetaIcon'
+import BetaLinearIcon from '../icons/BetaLinearIcon'
 import { BannerWrapper, BetaTitle, FlexCenter } from './style'
 
 import BetaIcon from '../icons/BetaIcon'
@@ -21,7 +21,7 @@ const BetaBanner = ({ isBeta, setIsBeta, currentTheme }) => {
         ⤫
       </span>
       <FlexCenter>
-        <LinearBetaIcon color={linearIcon} />
+        <BetaLinearIcon color={linearIcon} />
       </FlexCenter>
     </>
   )

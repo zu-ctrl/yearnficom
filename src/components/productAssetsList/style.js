@@ -75,3 +75,7 @@ export const WrapContainer = styled.div`
   width: 100%;
   max-width: 30%;
 `
+export const LinearContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`
