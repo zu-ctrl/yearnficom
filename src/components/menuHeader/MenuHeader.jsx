@@ -15,7 +15,7 @@ import {
   ButtonWrapper,
 } from './style'
 
-const MenuHeader = ({ currentTheme }) => {
+const MenuHeader = ({ currentTheme, account, setModalOpen }) => {
   const { loginIconColor, linearIcon, menu } = currentTheme
   return (
     <>
@@ -25,9 +25,15 @@ const MenuHeader = ({ currentTheme }) => {
         </FlexCenter>
         <ButtonWrapper>
           <Ripples color={menu.ripples}>
-            <LoginBtn>
+            <LoginBtn onClick={() => setModalOpen(true)}>
               <LoginIcon color={loginIconColor} />
-              <ButtonText>0xXXX...XXXX</ButtonText>
+              <ButtonText>
+                {account && account.address
+                  ? account.address.substring(0, 6) +
+                    '...' +
+                    account.address.substring(account.address.length - 4, account.address.length)
+                  : 'Login'}
+              </ButtonText>
             </LoginBtn>
           </Ripples>
         </ButtonWrapper>
