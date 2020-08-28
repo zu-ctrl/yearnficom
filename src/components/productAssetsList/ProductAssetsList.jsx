@@ -1,6 +1,7 @@
 import React from 'react'
 import Skeleton from '@material-ui/lab/Skeleton'
 import Ripples from 'react-ripples'
+import AssetLinearIcon from '../icons/AssetLinearIcon'
 import {
   Asset,
   AssetWrapper,
@@ -14,10 +15,11 @@ import {
   Balance,
   Flex,
   WrapContainer,
+  LinearContainer,
 } from './style'
 
 const ProductAssetsList = ({ assets, currentAsset, setCurrentAsset, currentTheme }) => {
-  const { menu } = currentTheme
+  const { menu, linearIcon, linearMiddleIcon } = currentTheme
   return (
     <Container>
       {assets.map((asset, i) => {
@@ -50,6 +52,11 @@ const ProductAssetsList = ({ assets, currentAsset, setCurrentAsset, currentTheme
                 </Flex>
               </Asset>
             </Ripples>
+            {currentAsset.symbol !== asset.symbol && (
+              <LinearContainer>
+                <AssetLinearIcon color={linearIcon} middle={linearMiddleIcon} />
+              </LinearContainer>
+            )}
           </AssetWrapper>
         )
       })}

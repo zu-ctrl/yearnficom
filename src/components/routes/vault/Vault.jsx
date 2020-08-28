@@ -16,7 +16,7 @@ import Loader from '../../common/loader/Loader'
 import UnlockModal from '../../unlock/unlockModal'
 import ProductAssets from '../../productAssets/ProductAssets'
 import ProductActions from '../../productActions/ProductActions'
-import { Container, MainWrapper } from './style'
+import { Container, MainWrapper, Shadow } from './style'
 
 const emitter = Store.emitter
 const dispatcher = Store.dispatcher
@@ -148,15 +148,18 @@ const Vault = ({ t, account, setAccount, currentTheme }) => {
           <button onClick={() => setModalOpen(true)}>login</button>
         </>
       ) : (
-        <MainWrapper>
-          <ProductAssets
-            assets={assets}
-            currentAsset={currentAsset}
-            currentTheme={currentTheme}
-            setCurrentAsset={setCurrentAsset}
-          />
-          <ProductActions currentAsset={currentAsset} />
-        </MainWrapper>
+        <>
+          <MainWrapper>
+            <ProductAssets
+              assets={assets}
+              currentAsset={currentAsset}
+              currentTheme={currentTheme}
+              setCurrentAsset={setCurrentAsset}
+            />
+            <ProductActions currentAsset={currentAsset} />
+          </MainWrapper>
+          <Shadow />
+        </>
       )}
       {modalOpen && <UnlockModal closeModal={() => setModalOpen(false)} modalOpen={modalOpen} />}
       {snackbarMessage && <Snackbar type={snackbarType} message={snackbarMessage} open={true} />} {/* TODO */}

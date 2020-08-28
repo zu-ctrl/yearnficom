@@ -6,3 +6,12 @@ export const Container = styled.div`
 export const MainWrapper = styled.div`
   display: flex;
 `
+
+export const Shadow = styled.div`
+  box-shadow: ${(p) => p.theme.mainShadow};
+  position: relative;
+  height: 23px;
+  background: #333;
+  width: 100%;
+  bottom: -9px;
+`
