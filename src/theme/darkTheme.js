@@ -14,7 +14,7 @@ export default {
   greenApy: '#95DE64',
   apyRowBackground: '#354154',
   infoLink: '#40a9ff',
-  productBackground: '#293140',
+  productBackground: '#111A21',
   assetListShadow: 'inset 0px -100px 23px -36px rgba(17,26,33,1);',
   menuHeader: {
     gradient: 'radial-gradient(43.43% 11.59% at 50% 100%, rgba(64, 169, 255, 0.16) 0%, rgba(17, 26, 33, 0.16) 100%);',
@@ -30,7 +30,7 @@ export default {
     shadow: '0px 4px 12px rgba(0, 0, 0, 0.25)',
     ripples: 'rgba(255, 255, 255, 0.05)',
     resourceColor: '#E3E4E6',
-    resourceBg: '#293140',
+    resourceBg: '#0d1217',
   },
   textFilter: 'drop-shadow(0px 0px 8px rgba(19, 194, 194, 0.5))',
   footer: {
@@ -43,9 +43,19 @@ export default {
   searchIcon: '#BBBDBF',
   vault: {
     searchText: '#bbbdbf',
-    searchBackground: '#1D2430',
-    assetBackground: '#1D2430',
+    searchBackground: '#111A21',
+    assetBackground: '#111A21',
   },
   formBackground: '#1d2430',
   formShadow: '0px 0px 30px #111a21',
+  formBorder: '1px solid #40a9ff',
+  formInputShadow: '0px 0px 14px rgba(64, 169, 255, 0.6)',
+  actionButton: {
+    bg: 'linear-gradient(113.39deg, #1f81d1 -13.96%, #0ea1a1 120.54%)',
+    shadow: '0px 0px 14px rgba(135, 232, 222, 0.35), inset 0px 1px 1px rgba(255, 255, 255, 0.4)',
+  },
+  slider: {
+    rail: '#394861',
+    track: 'linear-gradient(113.39deg, #1F81D1 -13.96%, #0EA1A1 120.54%)',
+  },
 }

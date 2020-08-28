@@ -23,4 +23,5 @@ export const TitleCell = styled.th`
   line-height: 160%;
   color: ${(p) => p.theme.white};
   text-align: left;
+  padding: 4px 6px;
 `

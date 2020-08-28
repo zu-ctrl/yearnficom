@@ -18,7 +18,7 @@ export const Title = styled.h2`
   line-height: 24px;
   color: ${(p) => p.theme.blue};
   filter: ${(p) => p.theme.textFilter};
-  max-width: 652px;
+  max-width: 682px;
   width: 100%;
   margin: 32px auto 0;
   padding: 0 10px;

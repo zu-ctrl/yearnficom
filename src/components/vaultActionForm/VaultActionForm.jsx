@@ -13,7 +13,19 @@ import {
 import Store from '../../stores/store'
 import { TextField, Slider } from '@material-ui/core'
 
-import { Container, FormContainer, InputBox } from './style'
+import {
+  Container,
+  FormContainer,
+  InputBox,
+  Balance,
+  WrapContainer,
+  Description,
+  ActionButton,
+  ButtonText,
+  ButtonWrapper,
+  SliderContainer,
+  Percent,
+} from './style'
 
 const emitter = Store.emitter
 const dispatcher = Store.dispatcher
@@ -116,7 +128,7 @@ const VaultActionForm = ({ asset, startLoading }) => {
   return (
     <Container>
       <FormContainer>
-        <div>
+        <WrapContainer>
           <InputBox>
             <TextField
               fullWidth
@@ -131,15 +143,12 @@ const VaultActionForm = ({ asset, startLoading }) => {
           </InputBox>
 
           {!asset.disabled && (
-            <div>
-              <div>
-                {'Wallet Balance: ' +
-                  (asset.balance ? (Math.floor(asset.balance * 10000) / 10000).toFixed(4) : '0.0000')}{' '}
-                {asset.tokenSymbol ? asset.tokenSymbol : asset.symbol}
-              </div>
-            </div>
+            <Balance>
+              {'Wallet Balance: ' + (asset.balance ? (Math.floor(asset.balance * 10000) / 10000).toFixed(4) : '0.0000')}{' '}
+              {asset.tokenSymbol ? asset.tokenSymbol : asset.symbol}
+            </Balance>
           )}
-          <div>
+          <SliderContainer>
             <Slider
               value={leftSlider}
               aria-labelledby='discrete-slider'
@@ -153,34 +162,34 @@ const VaultActionForm = ({ asset, startLoading }) => {
                 updateAmount(value)
               }}
             />
-            <div>{leftSlider}%</div>
-          </div>
-          <div>
-            <button
+            <Percent>{leftSlider}%</Percent>
+          </SliderContainer>
+          <ButtonWrapper>
+            <ActionButton
               disabled={loading || !account.address || asset.balance <= 0 || asset.depositDisabled === true}
               onClick={onDeposit}
             >
               <img src={require(`../../assets/ico-deposit.svg`)} alt='' />
-              <p>Deposit</p>
-            </button>
+              <ButtonText>Deposit</ButtonText>
+            </ActionButton>
             {asset.version === 2 && (
-              <button
+              <ActionButton
                 disabled={loading || !account.address || asset.balance <= 0 || asset.depositDisabled === true}
                 onClick={onDepositAll}
               >
                 <img src={require(`../../assets/ico-deposit.svg`)} alt='' />
-                <p>Deposit All</p>
-              </button>
+                <ButtonText>Deposit All</ButtonText>
+              </ActionButton>
             )}
-          </div>
+          </ButtonWrapper>
           {asset.depositDisabled === true && (
-            <div>
-              <div>Deposits are currently disabled for this vault</div>
-            </div>
+            <Description deposit>Deposits are currently disabled for this vault</Description>
           )}
-          <div>Upon deposit, assets are wrapped as yTokens in your wallet representing liquidity provided</div>
-        </div>
-        <div>
+          <Description>
+            Upon deposit, assets are wrapped as yTokens in your wallet representing liquidity provided
+          </Description>
+        </WrapContainer>
+        <WrapContainer>
           <InputBox>
             <TextField
               fullWidth
@@ -193,14 +202,12 @@ const VaultActionForm = ({ asset, startLoading }) => {
               variant='filled'
             />
           </InputBox>
-          <div>
-            <div>
-              {'Deployed: ' +
-                (asset.pooledBalance ? (Math.floor(asset.pooledBalance * 10000) / 10000).toFixed(4) : '0.0000')}{' '}
-              {asset.poolSymbol}{' '}
-            </div>
-          </div>
-          <div>
+          <Balance>
+            {'Deployed: ' +
+              (asset.pooledBalance ? (Math.floor(asset.pooledBalance * 10000) / 10000).toFixed(4) : '0.0000')}{' '}
+            {asset.poolSymbol}{' '}
+          </Balance>
+          <SliderContainer>
             <Slider
               value={rightSlider}
               aria-labelledby='discrete-slider'
@@ -214,22 +221,24 @@ const VaultActionForm = ({ asset, startLoading }) => {
                 updateRedeemAmount(value)
               }}
             />
-            <div>{rightSlider}%</div>
-          </div>
-          <div>
-            <button disabled={loading || !account.address || asset.pooledBalance <= 0} onClick={onWithdraw}>
+            <Percent>{rightSlider}%</Percent>
+          </SliderContainer>
+          <ButtonWrapper>
+            <ActionButton disabled={loading || !account.address || asset.pooledBalance <= 0} onClick={onWithdraw}>
               <img src={require(`../../assets/ico-withdraw.svg`)} alt='' />
-              <div>Withdraw</div>
-            </button>
+              <ButtonText>Withdraw</ButtonText>
+            </ActionButton>
             {asset.version === 2 && (
-              <button disabled={loading || !account.address || asset.pooledBalance <= 0} onClick={onWithdrawAll}>
+              <ActionButton disabled={loading || !account.address || asset.pooledBalance <= 0} onClick={onWithdrawAll}>
                 <img src={require(`../../assets/ico-withdraw.svg`)} alt='' />
-                <div>Withdraw All</div>
-              </button>
+                <ButtonText>Withdraw All</ButtonText>
+              </ActionButton>
             )}
-          </div>
-          <div>There is a 0.5% withdrawal fee on all vaults, and a 5% performance fee on subsidized gas.</div>
-        </div>
+          </ButtonWrapper>
+          <Description>
+            There is a 0.5% withdrawal fee on all vaults, and a 5% performance fee on subsidized gas.
+          </Description>
+        </WrapContainer>
       </FormContainer>
     </Container>
   )

@@ -19,7 +19,7 @@ export const Description = styled.h5`
   color: ${(p) => p.theme.whiteSmoke};
 `
 export const Container = styled.div`
-  max-width: 652px;
+  max-width: 682px;
   width: 100%;
   margin: 0 auto;
   padding: 33px 10px 0;
