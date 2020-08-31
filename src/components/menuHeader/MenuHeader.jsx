@@ -59,10 +59,18 @@ const MenuHeader = ({ currentTheme, account, setModalOpen, assets, theme }) => {
         </ButtonWrapper>
         <TextTotal>Your total deployed balance</TextTotal>
         <TextBlueBalance>
-          {assets && typeof assets[0].balance === 'number' ? `${assets[0].balance} ${assets[0].symbol}` : <Skeleton />}
+          {assets && typeof assets[0].balance === 'number' ? (
+            `${assets[0].balance} ${assets[0].symbol}`
+          ) : (
+            <Skeleton style={{ width: '50px' }} />
+          )}
         </TextBlueBalance>
         <TextWhiteBalance>
-          {assets && typeof assets[1].balance === 'number' ? `${assets[1].balance} ${assets[1].symbol}` : <Skeleton />}
+          {assets && typeof assets[1].balance === 'number' ? (
+            `${assets[1].balance} ${assets[1].symbol}`
+          ) : (
+            <Skeleton style={{ width: '50px' }} />
+          )}
         </TextWhiteBalance>
       </Wrapper>
       <FlexCenter>

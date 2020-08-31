@@ -17,10 +17,42 @@ const PyEarnTable = ({ pyEarnData }) => {
       <tbody>
         <Row>
           <Cell>APY</Cell>
-          <Cell>{!pyEarnData ? <Skeleton /> : pyEarnData.day === 'N/A' ? 'N/A' : `${pyEarnData.day}%`}</Cell>
-          <Cell>{!pyEarnData ? <Skeleton /> : pyEarnData.day === 'N/A' ? 'N/A' : `${pyEarnData.week}%`}</Cell>
-          <Cell>{!pyEarnData ? <Skeleton /> : pyEarnData.day === 'N/A' ? 'N/A' : `${pyEarnData.month}%`}</Cell>
-          <Cell>{!pyEarnData ? <Skeleton /> : pyEarnData.day === 'N/A' ? 'N/A' : `${pyEarnData.year}%`}</Cell>
+          <Cell>
+            {!pyEarnData ? (
+              <Skeleton style={{ width: '50px' }} />
+            ) : pyEarnData.day === 'N/A' ? (
+              'N/A'
+            ) : (
+              `${pyEarnData.day}%`
+            )}
+          </Cell>
+          <Cell>
+            {!pyEarnData ? (
+              <Skeleton style={{ width: '50px' }} />
+            ) : pyEarnData.day === 'N/A' ? (
+              'N/A'
+            ) : (
+              `${pyEarnData.week}%`
+            )}
+          </Cell>
+          <Cell>
+            {!pyEarnData ? (
+              <Skeleton style={{ width: '50px' }} />
+            ) : pyEarnData.day === 'N/A' ? (
+              'N/A'
+            ) : (
+              `${pyEarnData.month}%`
+            )}
+          </Cell>
+          <Cell>
+            {!pyEarnData ? (
+              <Skeleton style={{ width: '50px' }} />
+            ) : pyEarnData.day === 'N/A' ? (
+              'N/A'
+            ) : (
+              `${pyEarnData.year}%`
+            )}
+          </Cell>
         </Row>
       </tbody>
     </Table>

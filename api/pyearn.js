@@ -1,8 +1,8 @@
 const puppeteer = require('puppeteer')
 
 module.exports = async (req, res) => {
+  const browser = await puppeteer.launch()
   try {
-    const browser = await puppeteer.launch()
     const page = await browser.newPage()
     await page.goto('https://py-earn.herokuapp.com')
     await page.waitForSelector('.nav.nav-pills.nav-justified', { visible: true })
@@ -39,12 +39,13 @@ module.exports = async (req, res) => {
         return obj
       })
     })
-
+    await browser.close()
     return res.json({
       body: { success: true, data: values.filter((v) => !!v.symbol) },
     })
   } catch (e) {
     console.error('ERROR', e.toString())
+    await browser.close()
     return res.json({
       body: { success: false, error: e.toString() },
     })

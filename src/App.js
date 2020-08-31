@@ -27,6 +27,7 @@ import UnlockModal from './components/unlock/unlockModal'
 import Snackbar from './components/common/snackbar/Snackbar'
 import Loader from './components/common/loader/Loader'
 import Login from './components/login/Login'
+import DefaultInstructions from './components/defaultInstructions/DefaultInstructions'
 import './i18n'
 
 const emitter = Store.emitter
@@ -40,7 +41,7 @@ const App = ({ t }) => {
   const [isBeta, setIsBeta] = useState(localStorage.getItem('yearnfiBeta') !== 'false')
   const [modalOpen, setModalOpen] = useState(false)
   const [assets, setAssets] = useState(store.getStore('poolAssets'))
-  const [currentAsset, setCurrentAsset] = useState(assets[0])
+  const [currentAsset, setCurrentAsset] = useState(null)
   const [snackbarType, setSnackbarType] = useState(null)
   const [snackbarMessage, setSnackbarMessage] = useState(null)
   const [refreshTimer, setRefreshTimer] = useState(null)
@@ -207,16 +208,22 @@ const App = ({ t }) => {
                 />
               </Route>
               <Route path='/zap'>
-                <Redirect to='/vault' />
+                <Redirect to='/' />
               </Route>
               <Route path='/earn'>
-                <Redirect to='/vault' />
+                <Redirect to='/' />
+              </Route>
+              <Route path='/dao'>
+                <Redirect to='/' />
               </Route>
               <Route path='/cover'>
-                <Redirect to='/vault' />
+                <Redirect to='/' />
+              </Route>
+              <Route path='/vote'>
+                <Redirect to='/' />
               </Route>
               <Route path='/'>
-                <Redirect to='/vault' />
+                <DefaultInstructions />
               </Route>
             </Switch>
           </Main>

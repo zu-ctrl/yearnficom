@@ -26,7 +26,10 @@ const ProductAssetsList = ({ assets, currentAsset, setCurrentAsset, currentTheme
         return (
           <AssetWrapper key={i}>
             <Ripples color={menu.ripples}>
-              <Asset select={currentAsset.symbol === asset.symbol} onClick={() => setCurrentAsset(asset)}>
+              <Asset
+                select={currentAsset && currentAsset.symbol === asset.symbol}
+                onClick={() => setCurrentAsset(asset)}
+              >
                 <WrapContainer>
                   <Logo>
                     <img
@@ -43,7 +46,7 @@ const ProductAssetsList = ({ assets, currentAsset, setCurrentAsset, currentTheme
                       {asset.pyEarnData ? (
                         `${asset.pyEarnData.year !== 'N/A' ? `${(+asset.pyEarnData.year).toFixed(2)}%` : 'N/A'}`
                       ) : (
-                        <Skeleton />
+                        <Skeleton style={{ width: '50px' }} />
                       )}
                     </ApyDescription>
                   </Apy>
@@ -58,7 +61,7 @@ const ProductAssetsList = ({ assets, currentAsset, setCurrentAsset, currentTheme
                 </Flex>
               </Asset>
             </Ripples>
-            {currentAsset.symbol !== asset.symbol && (
+            {currentAsset && currentAsset.symbol !== asset.symbol && (
               <LinearContainer>
                 <AssetLinearIcon color={linearIcon} middle={linearMiddleIcon} />
               </LinearContainer>

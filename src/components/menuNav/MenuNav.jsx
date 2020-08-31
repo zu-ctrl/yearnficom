@@ -41,9 +41,25 @@ const MenuNav = ({ navigateTo, currentPage, currentTheme }) => {
         </ButtonWrapper>
         <ButtonWrapper>
           <Ripples color={menu.ripples}>
+            <MenuItem currentPage={currentPage === 'dao'} onClick={() => navigateTo('/dao')}>
+              <WalletIcon color={iconColor} glowColor={iconGlowColor} />
+              <ButtonText>Dao</ButtonText>
+            </MenuItem>
+          </Ripples>
+        </ButtonWrapper>
+        <ButtonWrapper>
+          <Ripples color={menu.ripples}>
             <MenuItem currentPage={currentPage === 'cover'} onClick={() => navigateTo('/cover')}>
               <CoverIcon color={iconColor} glowColor={iconGlowColor} />
               <ButtonText>Cover</ButtonText>
+            </MenuItem>
+          </Ripples>
+        </ButtonWrapper>
+        <ButtonWrapper>
+          <Ripples color={menu.ripples}>
+            <MenuItem currentPage={currentPage === 'vote'} onClick={() => navigateTo('/vote')}>
+              <CoverIcon color={iconColor} glowColor={iconGlowColor} />
+              <ButtonText>Vote</ButtonText>
             </MenuItem>
           </Ripples>
         </ButtonWrapper>
