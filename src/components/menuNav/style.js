@@ -7,7 +7,7 @@ export const Title = styled.h4`
   line-height: 24px;
   text-transform: uppercase;
   margin-left: 13px;
-  color: ${(p) => p.theme.blue};
+  color: ${(p) => p.theme.mainColor};
   filter: ${(p) => p.theme.textFilter};
 `
 export const Wrapper = styled.div`

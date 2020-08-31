@@ -4,6 +4,7 @@ import Skeleton from '@material-ui/lab/Skeleton'
 import LoginIcon from '../icons/LoginIcon'
 import LoginLightIcon from '../icons/LoginLightIcon'
 import YearnIcon from '../icons/YearnIcon'
+import YearnWaifuIcon from '../icons/YearnWaifuIcon'
 import LinearIcon from '../icons/LinearIcon'
 import ArrowDownIcon from '../icons/ArrowDownIcon'
 
@@ -20,29 +21,15 @@ import {
 } from './style'
 
 const MenuHeader = ({ currentTheme, account, setModalOpen, assets, theme }) => {
-  const { loginIconColor, linearIcon, menu, arrowDown } = currentTheme
+  const { loginIconColor, linearIcon, menu, arrowDown, waifuLinearIcon } = currentTheme
 
   return (
     <>
       <Wrapper>
-        <FlexCenter>
-          <YearnIcon />
-        </FlexCenter>
+        <FlexCenter>{theme === 'waifu' ? <YearnWaifuIcon /> : <YearnIcon />}</FlexCenter>
         <ButtonWrapper>
           <Ripples color={menu.ripples}>
-            {theme === 'light' ? (
-              <LoginLightBtn onClick={() => setModalOpen(true)}>
-                <LoginLightIcon color={loginIconColor} />
-                <ButtonText>
-                  {account && account.address
-                    ? account.address.substring(0, 6) +
-                      '...' +
-                      account.address.substring(account.address.length - 4, account.address.length)
-                    : 'Login'}
-                </ButtonText>
-                <ArrowDownIcon color={arrowDown} />
-              </LoginLightBtn>
-            ) : (
+            {theme === 'dark' ? (
               <LoginBtn onClick={() => setModalOpen(true)}>
                 <LoginIcon color={loginIconColor} />
                 <ButtonText>
@@ -54,6 +41,18 @@ const MenuHeader = ({ currentTheme, account, setModalOpen, assets, theme }) => {
                 </ButtonText>
                 <ArrowDownIcon color={arrowDown} />
               </LoginBtn>
+            ) : (
+              <LoginLightBtn onClick={() => setModalOpen(true)}>
+                <LoginLightIcon color={loginIconColor} />
+                <ButtonText>
+                  {account && account.address
+                    ? account.address.substring(0, 6) +
+                      '...' +
+                      account.address.substring(account.address.length - 4, account.address.length)
+                    : 'Login'}
+                </ButtonText>
+                <ArrowDownIcon color={arrowDown} />
+              </LoginLightBtn>
             )}
           </Ripples>
         </ButtonWrapper>
@@ -74,7 +73,7 @@ const MenuHeader = ({ currentTheme, account, setModalOpen, assets, theme }) => {
         </TextWhiteBalance>
       </Wrapper>
       <FlexCenter>
-        <LinearIcon color={linearIcon} />
+        <LinearIcon color={linearIcon} middle={waifuLinearIcon ? waifuLinearIcon : false} />
       </FlexCenter>
     </>
   )

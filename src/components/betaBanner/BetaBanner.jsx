@@ -6,7 +6,7 @@ import { BannerWrapper, BetaTitle, FlexCenter, Close } from './style'
 import BetaIcon from '../icons/BetaIcon'
 
 const BetaBanner = ({ isBeta, setIsBeta, currentTheme, theme }) => {
-  const { blue, linearIcon, closeIcon } = currentTheme
+  const { betaIcon, linearIcon, closeIcon } = currentTheme
   const handleCloseBetaBanner = () => {
     setIsBeta(false)
     localStorage.setItem('yearnfiBeta', 'false')
@@ -15,7 +15,7 @@ const BetaBanner = ({ isBeta, setIsBeta, currentTheme, theme }) => {
   return (
     <>
       <BannerWrapper>
-        <BetaIcon color={blue} />
+        <BetaIcon color={betaIcon} />
         <BetaTitle>This project is in beta. Use at your own risk.</BetaTitle>
         <Close onClick={handleCloseBetaBanner}>
           <CloseIcon color={closeIcon} />

@@ -53,7 +53,7 @@ export const TextBlueBalance = styled.p`
   font-size: 16px;
   line-height: 24px;
   text-align: center;
-  color: ${(p) => p.theme.blue};
+  color: ${(p) => p.theme.mainColor};
 `
 export const TextWhiteBalance = styled.p`
   font-family: 'PT Sans';

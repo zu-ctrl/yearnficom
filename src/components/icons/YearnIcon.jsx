@@ -1,6 +1,6 @@
 import React from 'react'
 
-const YearnIcon = ({ color, glowColor }) => {
+const YearnIcon = () => {
   return (
     <svg
       width='41'
