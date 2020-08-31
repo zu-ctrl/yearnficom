@@ -10,15 +10,19 @@ export const LoginBtn = styled.div`
   border-radius: 4px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   margin: 0 auto;
   width: 100%;
-  max-width: 127px;
-  padding: 0 10px 0 0;
+  max-width: 151px;
+  padding: 0 10px 0 2px;
   cursor: pointer;
 `
+export const LoginLightBtn = styled(LoginBtn)`
+  padding: 4px 10px;
+  max-width: 143px;
+`
 export const ButtonWrapper = styled.div`
-  max-width: 137px;
+  max-width: 163px;
   width: 100%;
   margin: 16px auto 0;
   border-radius: 4px;
@@ -57,5 +61,5 @@ export const TextWhiteBalance = styled.p`
   font-size: 12px;
   line-height: 24px;
   text-align: center;
-  color: ${(p) => p.theme.white};
+  color: ${(p) => p.theme.balance};
 `

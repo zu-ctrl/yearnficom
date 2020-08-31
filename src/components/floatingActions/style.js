@@ -5,4 +5,7 @@ export const FloatingActionsWrapper = styled.div`
   right: 25px;
   bottom: 25px;
   z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `

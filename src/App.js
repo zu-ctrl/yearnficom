@@ -177,16 +177,17 @@ const App = ({ t }) => {
   return (
     <ThemeProvider theme={currentTheme}>
       <IpfsRouter>
-        <BetaBanner isBeta={isBeta} setIsBeta={setIsBeta} currentTheme={currentTheme} />
+        <BetaBanner theme={theme} isBeta={isBeta} setIsBeta={setIsBeta} currentTheme={currentTheme} />
         {!account || !account.address ? (
           <Login setModalOpen={setModalOpen} />
         ) : (
           <Main isBeta={isBeta}>
             <FloatingActions>
-              <ThemeChooser theme={theme} setTheme={setTheme} />
+              <ThemeChooser theme={theme} currentTheme={currentTheme} setTheme={setTheme} />
               <LangChooser lang={lang} setLang={setLang} />
             </FloatingActions>
             <Menu
+              theme={theme}
               isBeta={isBeta}
               currentTheme={currentTheme}
               account={account}

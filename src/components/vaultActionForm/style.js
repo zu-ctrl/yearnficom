@@ -15,7 +15,7 @@ export const FormContainer = styled.div`
 `
 export const InputBox = styled.div`
   input {
-    background: ${(p) => p.theme.formBackground};
+    background: ${(p) => p.theme.inputBackground};
     border: ${(p) => p.theme.formBorder};
     box-sizing: border-box;
     box-shadow: ${(p) => p.theme.formInputShadow};
@@ -30,13 +30,16 @@ export const InputBox = styled.div`
     height: 40px;
     ::-webkit-input-placeholder {
       color: ${(p) => p.theme.white};
+      opacity: 1;
     }
 
     :-ms-input-placeholder {
       color: ${(p) => p.theme.white};
+      opacity: 1;
     }
     ::placeholder {
       color: ${(p) => p.theme.white};
+      opacity: 1;
     }
   }
   .MuiFilledInput-underline:hover:before {
@@ -53,7 +56,7 @@ export const Balance = styled.p`
   font-family: 'PT Sans';
   font-size: 12px;
   line-height: 22px;
-  color: ${(p) => p.theme.white};
+  color: ${(p) => p.theme.actionBalanceColor};
   margin-top: 5px;
 `
 export const WrapContainer = styled.div`
@@ -65,7 +68,7 @@ export const Description = styled.p`
   font-size: 12px;
   line-height: 22px;
   text-align: center;
-  color: ${(p) => (p.deposit ? p.theme.blue : p.theme.white)};
+  color: ${(p) => (p.deposit ? p.theme.blue : p.theme.actionBalanceColor)};
   margin-top: 16px;
 `
 export const ActionButton = styled.div`
@@ -95,7 +98,7 @@ export const ButtonText = styled.p`
   letter-spacing: 0.02em;
   text-transform: uppercase;
   margin-left: 8px;
-  color: ${(p) => (p.disabled ? p.theme.whiteSmoke : p.theme.white)};
+  color: ${(p) => (p.disabled ? p.theme.actionButton.disabledColor : p.theme.actionButton.color)};
 `
 export const ButtonWrapper = styled.div`
   display: flex;
@@ -120,8 +123,8 @@ export const SliderContainer = styled.div`
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    filter: drop-shadow(0px 0px 10px #40a9ff);
-    background: #bae7ff;
+    filter: ${(p) => p.theme.slider.filter};
+    background: ${(p) => p.theme.slider.sliderBg};
     border: 2px solid #1890ff;
     box-sizing: border-box;
     top: 50%;
@@ -131,10 +134,10 @@ export const SliderContainer = styled.div`
   }
   .MuiSlider-root {
     /* color: transparent; */
-    color: #818fa6;
+    color: ${(p) => p.theme.slider.mark};
   }
   .MuiSlider-markActive {
-    background-color: #bae7ff;
+    background-color: ${(p) => p.theme.slider.markActive};
     opacity: 1;
   }
   .MuiSlider-mark {
@@ -153,8 +156,8 @@ export const SliderContainer = styled.div`
     line-height: 22px;
     text-align: center;
     letter-spacing: 0.02em;
-    color: ${(p) => p.theme.white};
-    text-shadow: 0px 0px 10px #40a9ff;
+    color: ${(p) => p.theme.slider.currentValue};
+    text-shadow: ${(p) => p.theme.slider.shadow};
     margin-left: -5px;
     margin-bottom: -19px;
     ::after {
@@ -184,6 +187,7 @@ export const Percent = styled.div`
   font-family: 'PT Sans';
   font-size: 12px;
   line-height: 24px;
+  font-weight: ${(p) => p.theme.slider.fontWeight};
   color: ${(p) => p.theme.slider.blue};
   cursor: pointer;
 `

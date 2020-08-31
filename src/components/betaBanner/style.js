@@ -14,7 +14,7 @@ export const BetaTitle = styled.h5`
   font-weight: bold;
   font-size: 14px;
   line-height: 22px;
-  color: ${(p) => p.theme.white};
+  color: ${(p) => p.theme.betaText};
   margin-left: 9px;
 `
 export const FlexCenter = styled.div`

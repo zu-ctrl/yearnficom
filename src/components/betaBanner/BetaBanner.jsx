@@ -5,7 +5,7 @@ import { BannerWrapper, BetaTitle, FlexCenter, Close } from './style'
 
 import BetaIcon from '../icons/BetaIcon'
 
-const BetaBanner = ({ isBeta, setIsBeta, currentTheme }) => {
+const BetaBanner = ({ isBeta, setIsBeta, currentTheme, theme }) => {
   const { blue, linearIcon, closeIcon } = currentTheme
   const handleCloseBetaBanner = () => {
     setIsBeta(false)
@@ -21,9 +21,11 @@ const BetaBanner = ({ isBeta, setIsBeta, currentTheme }) => {
           <CloseIcon color={closeIcon} />
         </Close>
       </BannerWrapper>
-      <FlexCenter>
-        <BetaLinearIcon color={linearIcon} />
-      </FlexCenter>
+      {theme === 'dark' && (
+        <FlexCenter>
+          <BetaLinearIcon color={linearIcon} />
+        </FlexCenter>
+      )}
     </>
   )
 }
