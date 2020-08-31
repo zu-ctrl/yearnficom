@@ -7,7 +7,7 @@ export default {
   betaBoxShadow: '0px 4px 12px rgba(0, 0, 0, 0.25)',
   white: '#fff',
   blue: '#69C0FF',
-  blackMenuBackground: '#38b6ff',
+  blackMenuBackground: '#f6c5dd',
   linearIcon: '#69C0FF',
   linearMiddleIcon: '#40A9FF',
   whiteSmoke: ' #f3f4f5',

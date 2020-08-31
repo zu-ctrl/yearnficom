@@ -20,7 +20,7 @@ import FloatingActions from './components/floatingActions/FloatingActions'
 import ThemeChooser from './components/themeChooser/ThemeChooser'
 import LangChooser from './components/langChooser/LangChooser'
 import { ThemeProvider } from 'styled-components'
-import { lightTheme, darkTheme } from './theme/index'
+import { lightTheme, darkTheme, waifuTheme } from './theme/index'
 import Menu from './components/menu/Menu'
 import Vault from './components/routes/vault/Vault'
 import UnlockModal from './components/unlock/unlockModal'
@@ -46,7 +46,7 @@ const App = ({ t }) => {
   const [refreshTimer, setRefreshTimer] = useState(null)
   const [loading, setLoading] = useState(true)
 
-  const currentTheme = theme === 'light' ? lightTheme : darkTheme
+  const currentTheme = theme === 'light' ? lightTheme : theme === 'waifu' ? waifuTheme : darkTheme
 
   const refresh = () => {
     dispatcher.dispatch({ type: GET_POOL_BALANCES, content: {} })
