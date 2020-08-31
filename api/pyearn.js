@@ -1,7 +1,12 @@
-const puppeteer = require('puppeteer')
+const chrome = require('chrome-aws-lambda')
+// const puppeteer = require('puppeteer')
 
 module.exports = async (req, res) => {
-  const browser = await puppeteer.launch()
+  const browser = await chrome.puppeteer.launch({
+    args: chrome.args,
+    executablePath: await chrome.executablePath,
+    headless: chrome.headless,
+  })
   try {
     const page = await browser.newPage()
     await page.goto('https://py-earn.herokuapp.com')
