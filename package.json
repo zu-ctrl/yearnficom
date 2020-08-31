@@ -30,6 +30,7 @@
     "ipfs-react-router": "^0.2.2",
     "moment": "^2.27.0",
     "prop-types": "^15.7.2",
+    "puppeteer": "^5.2.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-i18next": "^9.0.10",
