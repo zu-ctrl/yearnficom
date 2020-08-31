@@ -25,6 +25,7 @@ import {
   ButtonWrapper,
   SliderContainer,
   Percent,
+  PercentContainer,
 } from './style'
 
 const emitter = Store.emitter
@@ -176,13 +177,13 @@ const VaultActionForm = ({ asset }) => {
               onChange={(_, value) => handleChangeLeftSLider(value)}
             />
           </SliderContainer>
-          <Percent>
-            <div onClick={() => handleChangeLeftSLider(0)}>0%</div>
-            <div onClick={() => handleChangeLeftSLider(25)}>25%</div>
-            <div onClick={() => handleChangeLeftSLider(50)}>50%</div>
-            <div onClick={() => handleChangeLeftSLider(75)}>75%</div>
-            <div onClick={() => handleChangeLeftSLider(100)}>100%</div>
-          </Percent>
+          <PercentContainer>
+            <Percent onClick={() => handleChangeLeftSLider(0)}>0%</Percent>
+            <Percent onClick={() => handleChangeLeftSLider(25)}>25%</Percent>
+            <Percent onClick={() => handleChangeLeftSLider(50)}>50%</Percent>
+            <Percent onClick={() => handleChangeLeftSLider(75)}>75%</Percent>
+            <Percent onClick={() => handleChangeLeftSLider(100)}>100%</Percent>
+          </PercentContainer>
           <ButtonWrapper>
             <ActionButton
               disabled={loading || !account.address || asset.balance <= 0 || asset.depositDisabled === true}
@@ -253,13 +254,13 @@ const VaultActionForm = ({ asset }) => {
               onChange={(_, value) => handleChangeRightSLider(value)}
             />
           </SliderContainer>
-          <Percent>
-            <div onClick={() => handleChangeRightSLider(0)}>0%</div>
-            <div onClick={() => handleChangeRightSLider(25)}>25%</div>
-            <div onClick={() => handleChangeRightSLider(50)}>50%</div>
-            <div onClick={() => handleChangeRightSLider(75)}>75%</div>
-            <div onClick={() => handleChangeRightSLider(100)}>100%</div>
-          </Percent>
+          <PercentContainer>
+            <Percent onClick={() => handleChangeRightSLider(0)}>0%</Percent>
+            <Percent onClick={() => handleChangeRightSLider(25)}>25%</Percent>
+            <Percent onClick={() => handleChangeRightSLider(50)}>50%</Percent>
+            <Percent onClick={() => handleChangeRightSLider(75)}>75%</Percent>
+            <Percent onClick={() => handleChangeRightSLider(100)}>100%</Percent>
+          </PercentContainer>
           <ButtonWrapper>
             <ActionButton
               disabled={loading || !account.address || asset.pooledBalance <= 0}

@@ -4,9 +4,9 @@ import VaultActionForm from '../vaultActionForm/VaultActionForm'
 import VaultBlockChart from '../vaultBlockChart/VaultBlockChart'
 import { Wrapper, Title } from './style'
 
-const ProductActions = ({ currentAsset }) => {
+const ProductActions = ({ currentAsset, isBeta }) => {
   return (
-    <Wrapper>
+    <Wrapper isBeta={isBeta}>
       <ProductInfo asset={currentAsset} />
       <Title>DEPOSIT AND WITHDRAW</Title>
       <VaultActionForm asset={currentAsset} />

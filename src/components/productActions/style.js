@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Wrapper = styled.div`
   background: ${(p) => p.theme.productBackground};
-  height: calc(100vh - 40px);
+  height: ${(p) => (p.isBeta ? 'calc(100vh - 40px)' : '100vh')};
   width: 70%;
   overflow-y: scroll;
   -ms-overflow-style: none;
@@ -16,7 +16,7 @@ export const Title = styled.h2`
   font-weight: bold;
   font-size: 16px;
   line-height: 24px;
-  color: ${(p) => p.theme.blue};
+  color: ${(p) => p.theme.productBlue};
   filter: ${(p) => p.theme.textFilter};
   max-width: 682px;
   width: 100%;

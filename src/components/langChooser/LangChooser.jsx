@@ -1,12 +1,13 @@
 import React from 'react'
+import { Select } from './style'
 
 const LangChooser = ({ lang, setLang }) => {
   return (
-    <select defaultValue={lang} onChange={(e) => setLang(e.currentTarget.value)}>
-      <option value="en">en</option>
-      <option value="ua">ua</option>
+    <Select defaultValue={lang} onChange={(e) => setLang(e.currentTarget.value)}>
+      <option value='en'>en</option>
+      <option value='ua'>ua</option>
       {/* TODO */}
-    </select>
+    </Select>
   )
 }
 

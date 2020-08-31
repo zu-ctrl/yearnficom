@@ -2,6 +2,23 @@ export default {
   iconColor: '#BAE7FF',
   loginIconColor: '#95DE64',
   iconGlowColor: '#40A9FF',
+  closeIcon: '#E6F7FF',
+  lightButtonIcon: '#1890FF',
+  arrowDown: '#818FA6',
+  balance: '#fff',
+  waifuIcon: {
+    bg: '#9551BA',
+    color: '#F3DEFF',
+  },
+  darkIcon: {
+    bg: '#818FA6',
+    color: '#354154',
+  },
+  chooser: {
+    bg: '#F0F2F5',
+    active: '#DCDDE0',
+    shadow: 'inset 0px 0px 2px rgba(0, 0, 0, 0.25)',
+  },
   betaBackgroundGradient:
     'radial-gradient(22.99% 100% at 50.42% 100%, rgba(64, 169, 255, 0.3) 0%, rgba(64, 169, 255, 0) 100%), #293140',
   betaBoxShadow: '0px 4px 12px rgba(0, 0, 0, 0.25)',
@@ -15,7 +32,6 @@ export default {
   apyRowBackground: '#354154',
   infoLink: '#40a9ff',
   productBackground: '#111A21',
-  assetListShadow: 'inset 0px -100px 23px -36px rgba(17,26,33,1);',
   menuHeader: {
     gradient: 'radial-gradient(43.43% 11.59% at 50% 100%, rgba(64, 169, 255, 0.16) 0%, rgba(17, 26, 33, 0.16) 100%);',
     buttonBackground: '#293140',
@@ -47,6 +63,7 @@ export default {
     assetBackground: '#111A21',
   },
   formBackground: '#1d2430',
+  inputBackground: '#E3E5E8',
   formShadow: '0px 0px 30px #111a21',
   formBorder: '1px solid #40a9ff',
   formInputShadow: '0px 0px 14px rgba(64, 169, 255, 0.6)',
