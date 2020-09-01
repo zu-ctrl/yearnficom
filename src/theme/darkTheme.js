@@ -5,8 +5,14 @@ export default {
   closeIcon: '#E6F7FF',
   lightButtonIcon: '#1890FF',
   arrowDown: '#818FA6',
+  sortByArrow: '#AEB7C6',
   balance: '#fff',
   betaText: '#fff',
+  sort: {
+    color: '#AEB7C6',
+    select: '#fff',
+    icon: '#AEB7C6',
+  },
   waifuIcon: {
     bg: '#9551BA',
     color: '#F3DEFF',
