@@ -46,6 +46,7 @@ const App = ({ t }) => {
   const [snackbarMessage, setSnackbarMessage] = useState(null)
   const [refreshTimer, setRefreshTimer] = useState(null)
   const [loading, setLoading] = useState(true)
+  const [isMobile, setIsMobile] = useState(window.innerWidth)
 
   const currentTheme = theme === 'light' ? lightTheme : theme === 'waifu' ? waifuTheme : darkTheme
 
@@ -134,6 +135,10 @@ const App = ({ t }) => {
     })
   }
 
+  const handleWindowSizeChange = () => {
+    setIsMobile(window.innerWidth > 0 && window.innerWidth < 768)
+  }
+
   useEffect(() => {
     injected.isAuthorized().then((isAuthorized) => {
       if (isAuthorized) {
@@ -153,6 +158,7 @@ const App = ({ t }) => {
       }
     })
     setAccount(store.getStore('account'))
+    window.addEventListener('resize', handleWindowSizeChange)
     if (account && account.address) {
       dispatcher.dispatch({ type: GET_POOL_BALANCES, content: {} })
     }
@@ -164,6 +170,7 @@ const App = ({ t }) => {
     emitter.on(CONNECTION_DISCONNECTED, connectionDisconnected)
     setLoading(false)
     return () => {
+      window.removeEventListener('resize', handleWindowSizeChange)
       clearTimeout(refreshTimer)
       emitter.removeListener(DEPOSIT_POOL_RETURNED, showHash)
       emitter.removeListener(WITHDRAW_POOL_RETURNED, showHash)
