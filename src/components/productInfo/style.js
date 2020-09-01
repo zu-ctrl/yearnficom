@@ -22,11 +22,15 @@ export const Container = styled.div`
   max-width: 682px;
   width: 100%;
   margin: 0 auto;
-  padding: 33px 10px 0;
+  padding: 33px 0 0;
 `
 export const FlexStart = styled.div`
   display: flex;
   justify-content: space-between;
+  @media (max-width: 1100px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `
 export const InfoText = styled.p`
   font-family: 'PT Sans';

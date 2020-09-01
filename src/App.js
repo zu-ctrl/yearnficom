@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 import IpfsRouter from 'ipfs-react-router'
 import axios from 'axios'
@@ -47,6 +47,7 @@ const App = ({ t }) => {
   const [refreshTimer, setRefreshTimer] = useState(null)
   const [loading, setLoading] = useState(true)
   const [isMobile, setIsMobile] = useState(window.innerWidth)
+  const menu = useRef(null)
 
   const currentTheme = theme === 'light' ? lightTheme : theme === 'waifu' ? waifuTheme : darkTheme
 
@@ -139,6 +140,14 @@ const App = ({ t }) => {
     setIsMobile(window.innerWidth > 0 && window.innerWidth < 768)
   }
 
+  const handleScroll = () => {
+    console.log('menu', menu)
+
+    if (menu.scrollHeight - menu.scrollTop === menu.clientHeight) {
+      console.log('scrolled')
+    }
+  }
+
   useEffect(() => {
     injected.isAuthorized().then((isAuthorized) => {
       if (isAuthorized) {
@@ -157,6 +166,8 @@ const App = ({ t }) => {
           })
       }
     })
+    console.log('menu', menu.current)
+    // menu.addEventListener('scroll', handleScroll)
     setAccount(store.getStore('account'))
     window.addEventListener('resize', handleWindowSizeChange)
     if (account && account.address) {
@@ -171,6 +182,7 @@ const App = ({ t }) => {
     setLoading(false)
     return () => {
       window.removeEventListener('resize', handleWindowSizeChange)
+      // el.removeEventListener('scroll', handleWindowScroll)
       clearTimeout(refreshTimer)
       emitter.removeListener(DEPOSIT_POOL_RETURNED, showHash)
       emitter.removeListener(WITHDRAW_POOL_RETURNED, showHash)
@@ -195,6 +207,7 @@ const App = ({ t }) => {
               <LangChooser lang={lang} setLang={setLang} />
             </FloatingActions>
             <Menu
+              menu={menu}
               theme={theme}
               isBeta={isBeta}
               currentTheme={currentTheme}

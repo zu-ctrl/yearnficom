@@ -9,6 +9,14 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media (max-width: 990px) {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  @media (max-width: 800px) {
+    max-width: 400px;
+  }
 `
 export const Input = styled.input`
   border: none;

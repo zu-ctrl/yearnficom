@@ -22,6 +22,16 @@ export const MenuItem = styled.div`
   padding: 10px 15px;
   cursor: pointer;
 `
+export const MenuLink = styled.a`
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  background: ${(p) => (p.currentPage ? p.theme.menu.gradient : 'inherit')};
+  box-shadow: ${(p) => p.theme.menu.shadow};
+  padding: 10px 15px;
+  cursor: pointer;
+  text-decoration: none;
+`
 export const ButtonText = styled.p`
   font-family: 'PT Sans';
   font-weight: bold;

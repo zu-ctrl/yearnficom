@@ -8,7 +8,7 @@ import { Container, MainWrapper, Shadow } from './style'
 const Vault = ({ t, currentTheme, assets, currentAsset, setCurrentAsset, isBeta }) => {
   return (
     <Container>
-      <MainWrapper>
+      <MainWrapper isBeta={isBeta}>
         <ProductAssets
           isBeta={isBeta}
           assets={assets}

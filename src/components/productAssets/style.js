@@ -11,6 +11,14 @@ export const Container = styled.div`
   ::-webkit-scrollbar {
     display: none;
   }
+  @media (max-width: 990px) {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 14px 0 0;
+  }
 `
 export const SelectContainer = styled.div`
   display: flex;
@@ -62,5 +70,10 @@ export const SelectContainer = styled.div`
   }
   input {
     border: none;
+  }
+  @media (max-width: 990px) {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
   }
 `

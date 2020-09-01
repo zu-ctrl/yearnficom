@@ -10,6 +10,13 @@ export const Wrapper = styled.div`
   ::-webkit-scrollbar {
     display: none;
   }
+  @media (max-width: 990px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    width: 100%;
+  }
 `
 export const Title = styled.h2`
   font-family: 'PT Sans';
@@ -21,5 +28,7 @@ export const Title = styled.h2`
   max-width: 682px;
   width: 100%;
   margin: 32px auto 0;
-  padding: 0 10px;
+  @media (max-width: 1100px) {
+    text-align: center;
+  }
 `
