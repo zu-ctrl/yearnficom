@@ -68,7 +68,7 @@ export const Description = styled.p`
   font-size: 12px;
   line-height: 22px;
   text-align: center;
-  color: ${(p) => (p.deposit ? p.theme.blue : p.theme.actionBalanceColor)};
+  color: ${(p) => (p.deposit ? p.theme.mainColor : p.theme.actionBalanceColor)};
   margin-top: 16px;
 `
 export const ActionButton = styled.div`
@@ -125,7 +125,7 @@ export const SliderContainer = styled.div`
     border-radius: 50%;
     filter: ${(p) => p.theme.slider.filter};
     background: ${(p) => p.theme.slider.sliderBg};
-    border: 2px solid #1890ff;
+    border: ${(p) => p.theme.slider.border};
     box-sizing: border-box;
     top: 50%;
     margin-top: 2px;
@@ -188,6 +188,6 @@ export const Percent = styled.div`
   font-size: 12px;
   line-height: 24px;
   font-weight: ${(p) => p.theme.slider.fontWeight};
-  color: ${(p) => p.theme.slider.blue};
+  color: ${(p) => p.theme.slider.percentColor};
   cursor: pointer;
 `

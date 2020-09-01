@@ -16,7 +16,7 @@ export const Title = styled.h2`
   font-weight: bold;
   font-size: 16px;
   line-height: 24px;
-  color: ${(p) => p.theme.productBlue};
+  color: ${(p) => p.theme.productTitle};
   filter: ${(p) => p.theme.textFilter};
   max-width: 682px;
   width: 100%;
