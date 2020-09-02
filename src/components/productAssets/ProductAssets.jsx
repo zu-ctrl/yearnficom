@@ -9,28 +9,27 @@ import Select from '@material-ui/core/Select'
 import { Container, SelectContainer } from './style'
 
 const ProductAssets = ({ assets, currentAsset, setCurrentAsset, currentTheme, isBeta }) => {
-  const [select, setSelect] = useState('APY')
+  const [filteredAssets, setFilteredAssets] = useState(assets)
+  const [sortBy, setSortBy] = useState('balance')
 
-  const handleChange = (event) => {
-    setSelect(event.target.value)
+  const sortedAssets = () => {
+    return filteredAssets.sort((a, b) => parseFloat(b[sortBy]) - parseFloat(a[sortBy]))
   }
 
-  const [filteredAssets, setFilteredAssets] = useState(assets)
   return (
     <Container isBeta={isBeta}>
       <ProductAssetsSearch assets={assets} setFilteredAssets={setFilteredAssets} currentTheme={currentTheme} />
       <SelectContainer>
         <FormControl>
-          <InputLabel id='select'>Sort by</InputLabel>
-          <Select labelId='select' id='demo-simple-select' value={select} onChange={handleChange}>
-            <MenuItem value='APY'>APY</MenuItem>
-            <MenuItem value='Balance'>Balance</MenuItem>
-            <MenuItem value='Name'>Name</MenuItem>
+          <InputLabel>Sort by</InputLabel>
+          <Select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
+            <MenuItem value='balance'>Balance</MenuItem>
+            <MenuItem value='apy'>APY</MenuItem>
           </Select>
         </FormControl>
       </SelectContainer>
       <ProductAssetsList
-        assets={filteredAssets}
+        assets={sortedAssets()}
         currentAsset={currentAsset}
         setCurrentAsset={setCurrentAsset}
         currentTheme={currentTheme}

@@ -22,7 +22,7 @@ import {
 
 const MenuHeader = ({ currentTheme, account, setModalOpen, assets, theme }) => {
   const { loginIconColor, linearIcon, menu, arrowDown, waifuLinearIcon } = currentTheme
-
+  const sortedAssetsByBalance = assets.sort((a, b) => parseFloat(b.balance) - parseFloat(a.balance))
   return (
     <>
       <Wrapper>
@@ -58,15 +58,15 @@ const MenuHeader = ({ currentTheme, account, setModalOpen, assets, theme }) => {
         </ButtonWrapper>
         <TextTotal>Your total deployed balance</TextTotal>
         <TextBlueBalance>
-          {assets && typeof assets[0].balance === 'number' ? (
-            `${assets[0].balance} ${assets[0].symbol}`
+          {sortedAssetsByBalance && typeof sortedAssetsByBalance[0].balance === 'number' ? (
+            `${sortedAssetsByBalance[0].balance} ${sortedAssetsByBalance[0].symbol}`
           ) : (
             <Skeleton style={{ width: '50px' }} />
           )}
         </TextBlueBalance>
         <TextWhiteBalance>
-          {assets && typeof assets[1].balance === 'number' ? (
-            `${assets[1].balance} ${assets[1].symbol}`
+          {sortedAssetsByBalance && typeof sortedAssetsByBalance[1].balance === 'number' ? (
+            `${sortedAssetsByBalance[1].balance} ${sortedAssetsByBalance[1].symbol}`
           ) : (
             <Skeleton style={{ width: '50px' }} />
           )}

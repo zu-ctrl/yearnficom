@@ -93,7 +93,6 @@ const App = ({ t }) => {
     } catch (e) {
       console.error('[pyearn]', e.toString())
     }
-    updatedAssets = updatedAssets.sort((a, b) => parseFloat(b.balance) - parseFloat(a.balance))
     setAssets(updatedAssets)
     setRefreshTimer(setTimeout(refresh, 300000))
   }
