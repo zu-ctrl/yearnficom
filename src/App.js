@@ -46,7 +46,7 @@ const App = ({ t }) => {
   const [snackbarMessage, setSnackbarMessage] = useState(null)
   const [refreshTimer, setRefreshTimer] = useState(null)
   const [loading, setLoading] = useState(true)
-  const [isMobile, setIsMobile] = useState(window.innerWidth)
+  const [isMobile, setIsMobile] = useState(window.innerWidth > 0 && window.innerWidth < 768)
 
   const currentTheme = theme === 'light' ? lightTheme : theme === 'waifu' ? waifuTheme : darkTheme
 
