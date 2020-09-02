@@ -230,7 +230,7 @@ const App = ({ t }) => {
                 <Redirect to='/' />
               </Route>
               <Route path='/'>
-                <DefaultInstructions />
+                <DefaultInstructions currentTheme={currentTheme} />
               </Route>
             </Switch>
           </Main>

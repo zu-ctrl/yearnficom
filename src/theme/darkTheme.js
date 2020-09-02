@@ -8,6 +8,47 @@ export default {
   sortByArrow: '#AEB7C6',
   balance: '#fff',
   betaText: '#fff',
+  defInstructions: {
+    bg: '#111a21',
+    glow: 'radial-gradient(52.66% 50.98% at 50% 0%, rgba(64, 169, 255, 0.15) 0%, rgba(64, 169, 255, 0) 89.58%)',
+    acordion: {
+      bg: 'linear-gradient(100.35deg, #369eff 0%, #096dd9 100%)',
+      filter: 'drop-shadow(0px 0px 14px rgba(135, 232, 222, 0.35))',
+      shadow: 'inset 0px 1px 1px rgba(255, 255, 255, 0.4)',
+      dropBg: '#1d2430',
+      dropShadow: '0px 0px 30px #111a21',
+      buttonColor: '#fff',
+      icon: '#fff',
+    },
+    subTitle: {
+      color: '#69C0FF',
+      filter: 'drop-shadow(0px 0px 10px #40a9ff)',
+    },
+    button: {
+      mainColor: '#FFF',
+      text: '#AEB7C6',
+      bg: '#293140',
+    },
+    border: {
+      invest: {
+        vault: '2px solid #CA7374',
+        earn: '2px solid #C377E3',
+        dao: '2px solid #C377E3',
+      },
+      protect: {
+        cover: '2px solid #73D13D',
+      },
+      govern: {
+        sentiment_vote: '2px solid #36CFC9',
+        governance_vote: '2px solid #36CFC9',
+      },
+      manage: {
+        zap: '2px solid #5282EA',
+        dashboard: '2px solid #5282EA',
+      },
+    },
+    color: '#fff',
+  },
   sort: {
     color: '#AEB7C6',
     select: '#fff',
