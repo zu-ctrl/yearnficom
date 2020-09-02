@@ -2,10 +2,11 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   background: ${(p) => p.theme.vault.assetBackground};
-  padding: 14px 16px 0;
+  padding: 14px 0 0;
   height: ${(p) => (p.isBeta ? 'calc(100vh - 40px)' : '100vh')};
   overflow-y: scroll;
-  width: 30%;
+  width: 100%;
+  position: relative;
   -ms-overflow-style: none;
   scrollbar-width: none;
   ::-webkit-scrollbar {
@@ -24,6 +25,7 @@ export const SelectContainer = styled.div`
   display: flex;
   justify-content: flex-end;
   margin: 5px 0 -20px;
+  padding: 0 16px;
   label + .MuiInput-formControl {
     margin-top: 0;
   }
@@ -75,5 +77,27 @@ export const SelectContainer = styled.div`
     max-width: 500px;
     width: 100%;
     margin: 0 auto;
+  }
+`
+export const Shadow = styled.div`
+  box-shadow: ${(p) => (p.shadowDisabled ? 'none' : p.theme.mainShadow)};
+  position: absolute;
+  width: 100%;
+  height: 23px;
+  background: #333;
+  bottom: -30px;
+  @media (max-width: 990px) {
+    box-shadow: none;
+  }
+`
+export const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  max-width: 30%;
+  width: 100%;
+  overflow: hidden;
+  @media (max-width: 990px) {
+    max-width: 100%;
   }
 `

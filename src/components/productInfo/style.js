@@ -38,6 +38,9 @@ export const InfoText = styled.p`
   line-height: 24px;
   color: ${(p) => p.theme.white};
   margin-top: 32px;
+  @media (max-width: 990px) {
+    padding: 0 10px;
+  }
 `
 export const LinkInfo = styled.a`
   font-family: 'PT Sans';
@@ -47,4 +50,7 @@ export const LinkInfo = styled.a`
   text-decoration: none;
   margin-top: 10px;
   display: inline-block;
+  @media (max-width: 990px) {
+    padding: 0 10px;
+  }
 `

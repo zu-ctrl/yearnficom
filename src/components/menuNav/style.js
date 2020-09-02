@@ -62,5 +62,5 @@ export const ResourceItem = styled.a`
   }
 `
 export const WrapperResource = styled.div`
-  padding: 20px 16px 25px;
+  padding: 20px 16px 10px;
 `

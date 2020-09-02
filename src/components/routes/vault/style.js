@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   width: 100%;
+  position: relative;
 `
 export const MainWrapper = styled.div`
   display: flex;
@@ -12,10 +13,13 @@ export const MainWrapper = styled.div`
   }
 `
 export const Shadow = styled.div`
-  box-shadow: ${(p) => p.theme.mainShadow};
-  position: relative;
-  height: 23px;
-  background: #333;
-  width: 100%;
-  bottom: -19px;
+  box-shadow: none;
+  @media (max-width: 990px) {
+    box-shadow: ${(p) => (p.shadowDisabled ? 'none' : p.theme.mainShadow)};
+    position: absolute;
+    width: 100%;
+    height: 23px;
+    background: #333;
+    bottom: -40px;
+  }
 `

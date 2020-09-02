@@ -8,10 +8,10 @@ import MediumIcon from '../icons/MediumIcon'
 
 import { Container, FlexCenter, SocialWrapper, SocialLink, Menu, Item, Shadow } from './style'
 
-const MenuFooter = ({ currentTheme }) => {
+const MenuFooter = ({ currentTheme, shadowDisabled }) => {
   const { linearIcon, footer } = currentTheme
   return (
-    <Shadow>
+    <Shadow shadowDisabled={shadowDisabled}>
       <FlexCenter>
         <LinearIcon color={linearIcon} />
       </FlexCenter>
