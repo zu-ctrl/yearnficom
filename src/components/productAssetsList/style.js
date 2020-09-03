@@ -13,7 +13,12 @@ export const AssetWrapper = styled.div`
 `
 export const Container = styled.div`
   margin-top: 16px;
-  padding-bottom: 30px;
+  padding: 0 16px 30px;
+  @media (max-width: 990px) {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+  }
 `
 export const Logo = styled.div`
   display: flex;

@@ -3,6 +3,9 @@ import styled from 'styled-components'
 export const Table = styled.table`
   max-width: 420px;
   width: 100%;
+  @media (max-width: 1100px) {
+    margin-top: 20px;
+  }
 `
 export const Row = styled.tr`
   background: ${(p) => p.theme.apyRowBackground};

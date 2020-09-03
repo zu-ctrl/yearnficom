@@ -36,7 +36,7 @@ export const Item = styled.a`
   text-align: center;
 `
 export const Shadow = styled.div`
-  box-shadow: ${(p) => p.theme.footer.shadow};
+  box-shadow: ${(p) => (p.shadowDisabled ? 'none' : p.theme.footer.shadow)};
   overflow: visible;
   position: relative;
 `

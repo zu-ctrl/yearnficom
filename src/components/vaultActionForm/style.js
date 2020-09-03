@@ -4,6 +4,15 @@ export const Container = styled.div`
   max-width: 682px;
   width: 100%;
   margin: 32px auto 0;
+  @media (max-width: 1150px) {
+    max-width: 400px;
+  }
+  @media (max-width: 990px) {
+    max-width: 700px;
+  }
+  @media (max-width: 880px) {
+    max-width: 400px;
+  }
 `
 export const FormContainer = styled.div`
   background: ${(p) => p.theme.formBackground};
@@ -12,6 +21,18 @@ export const FormContainer = styled.div`
   padding: 30px 26px;
   display: flex;
   justify-content: space-between;
+  @media (max-width: 1150px) {
+    flex-direction: column;
+    align-items: center;
+  }
+  @media (max-width: 990px) {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  @media (max-width: 880px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `
 export const InputBox = styled.div`
   input {
@@ -62,6 +83,21 @@ export const Balance = styled.p`
 export const WrapContainer = styled.div`
   max-width: 290px;
   width: 100%;
+  @media (max-width: 1150px) {
+    :last-of-type {
+      margin-top: 15px;
+    }
+  }
+  @media (max-width: 990px) {
+    :last-of-type {
+      margin-top: 0;
+    }
+  }
+  @media (max-width: 880px) {
+    :last-of-type {
+      margin-top: 15px;
+    }
+  }
 `
 export const Description = styled.p`
   font-family: 'PT Sans';
@@ -149,7 +185,7 @@ export const SliderContainer = styled.div`
       visibility: visible;
     }
   }
-  .PrivateValueLabel-label-5 {
+  .MuiSlider-valueLabel {
     font-family: 'PT Sans';
     font-weight: bold;
     font-size: 14px;
@@ -158,8 +194,14 @@ export const SliderContainer = styled.div`
     letter-spacing: 0.02em;
     color: ${(p) => p.theme.slider.currentValue};
     text-shadow: ${(p) => p.theme.slider.shadow};
-    margin-left: -5px;
-    margin-bottom: -19px;
+    margin-left: 9px;
+    top: -23px;
+    display: flex;
+    align-items: center;
+    span {
+      background-color: transparent;
+      width: max-content;
+    }
     ::after {
       content: '%';
     }

@@ -8,6 +8,47 @@ export default {
   sortByArrow: '#888A8C',
   balance: '#080809',
   betaText: '#252626',
+  defInstructions: {
+    bg: '#FFF',
+    glow: 'none',
+    acordion: {
+      bg: '#F3DEFF',
+      filter: 'none',
+      shadow: 'inset 0px 1px 1px rgba(255, 255, 255, 0.4)',
+      dropBg: '#fff',
+      dropShadow: 'none',
+      buttonColor: '#080809',
+      icon: '#818FA6',
+    },
+    subTitle: {
+      color: '#9551BA',
+      filter: 'none',
+    },
+    button: {
+      mainColor: '#080809',
+      text: '#27272b',
+      bg: '#E3E5E8',
+    },
+    border: {
+      invest: {
+        vault: '2px solid #CA7374',
+        earn: '2px solid #C377E3',
+        dao: '2px solid #C377E3',
+      },
+      protect: {
+        cover: '2px solid #73D13D',
+      },
+      govern: {
+        sentiment_vote: '2px solid #36CFC9',
+        governance_vote: '2px solid #36CFC9',
+      },
+      manage: {
+        zap: '2px solid #5282EA',
+        dashboard: '2px solid #5282EA',
+      },
+    },
+    color: '#080809',
+  },
   sort: {
     color: '#888A8C',
     select: '#080809',

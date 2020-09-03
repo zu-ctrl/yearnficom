@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 import IpfsRouter from 'ipfs-react-router'
 import axios from 'axios'
@@ -229,7 +229,7 @@ const App = ({ t }) => {
                 <Redirect to='/' />
               </Route>
               <Route path='/'>
-                <DefaultInstructions />
+                <DefaultInstructions currentTheme={currentTheme} />
               </Route>
             </Switch>
           </Main>

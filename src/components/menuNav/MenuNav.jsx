@@ -7,7 +7,17 @@ import CoverIcon from '../icons/CoverIcon'
 import DashboardIcon from '../icons/DashboardIcon'
 import MenuWrapperIcon from '../icons/MenuWrapperIcon'
 
-import { Title, Wrapper, ButtonText, MenuItem, ButtonWrapper, FlexCenter, ResourceItem, WrapperResource } from './style'
+import {
+  Title,
+  Wrapper,
+  ButtonText,
+  MenuItem,
+  ButtonWrapper,
+  FlexCenter,
+  ResourceItem,
+  WrapperResource,
+  MenuLink,
+} from './style'
 
 const MenuNav = ({ navigateTo, currentPage, currentTheme }) => {
   const { iconColor, iconGlowColor, menu, linearIcon, linearMiddleIcon } = currentTheme
@@ -65,10 +75,10 @@ const MenuNav = ({ navigateTo, currentPage, currentTheme }) => {
         </ButtonWrapper>
         <ButtonWrapper>
           <Ripples color={menu.ripples}>
-            <MenuItem currentPage={currentPage === '/'} onClick={() => navigateTo('/')}>
+            <MenuLink href='https://zapper.fi/dashboard' target='_blank'>
               <DashboardIcon color={iconColor} glowColor={iconGlowColor} />
               <ButtonText>Dashboard by Zapper</ButtonText>
-            </MenuItem>
+            </MenuLink>
           </Ripples>
         </ButtonWrapper>
       </Wrapper>
@@ -77,16 +87,30 @@ const MenuNav = ({ navigateTo, currentPage, currentTheme }) => {
       </FlexCenter>
       <WrapperResource>
         <Title>RESOURCES</Title>
-        <ResourceItem href='#'>FAQ</ResourceItem>
-        <ResourceItem href='#'>Governance</ResourceItem>
-        <ResourceItem href='#'>yCosystem</ResourceItem>
-        <ResourceItem href='#'>Learn Yearn</ResourceItem>
-        <ResourceItem href='#'>View Strategies</ResourceItem>
-        <ResourceItem href='#'>Wallet Stats</ResourceItem>
-        <ResourceItem href='#'>Yearn Stats</ResourceItem>
-        <ResourceItem href='#'>Governance Stats</ResourceItem>
-        <ResourceItem href='#'>Governance Stats</ResourceItem>
-        <ResourceItem href='#'>Governance Stats</ResourceItem>
+        <ResourceItem href='#' target='_blank'>
+          FAQ
+        </ResourceItem>
+        <ResourceItem href='#' target='_blank'>
+          Governance
+        </ResourceItem>
+        <ResourceItem href='https://ycosystem.info/' target='_blank'>
+          yCosystem
+        </ResourceItem>
+        <ResourceItem href='#' target='_blank'>
+          Learn Yearn
+        </ResourceItem>
+        <ResourceItem href='#' target='_blank'>
+          View Strategies
+        </ResourceItem>
+        <ResourceItem href='#' target='_blank'>
+          Wallet Stats
+        </ResourceItem>
+        <ResourceItem href='#' target='_blank'>
+          Yearn Stats
+        </ResourceItem>
+        <ResourceItem href='#' target='_blank'>
+          Governance Stats
+        </ResourceItem>
       </WrapperResource>
     </>
   )

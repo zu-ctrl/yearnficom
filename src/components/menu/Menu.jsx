@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { withRouter } from 'react-router-dom'
 import MenuHeader from '../menuHeader/MenuHeader'
 import MenuNav from '../menuNav/MenuNav'
@@ -9,10 +9,16 @@ const Menu = ({ history, currentTheme, account, setModalOpen, assets, isBeta, th
   const navigateTo = (route) => history.push(route)
   const currentPage = history.location.pathname.slice(1)
 
+  const [shadowDisabled, setShadowDisabled] = useState(false)
+
+  const onScroll = (e) => {
+    setShadowDisabled(e.target.scrollHeight - e.target.scrollTop - 50 <= e.target.clientHeight)
+  }
+
   return (
     <>
       <Wrapper isBeta={isBeta}>
-        <ScrollContainer>
+        <ScrollContainer onScroll={onScroll}>
           <MenuHeader
             theme={theme}
             currentTheme={currentTheme}
@@ -22,7 +28,7 @@ const Menu = ({ history, currentTheme, account, setModalOpen, assets, isBeta, th
           />
           <MenuNav currentTheme={currentTheme} navigateTo={navigateTo} currentPage={currentPage} />
         </ScrollContainer>
-        <MenuFooter currentTheme={currentTheme} />
+        <MenuFooter shadowDisabled={shadowDisabled} currentTheme={currentTheme} />
       </Wrapper>
     </>
   )
