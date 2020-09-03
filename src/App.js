@@ -28,6 +28,7 @@ import Snackbar from './components/common/snackbar/Snackbar'
 import Loader from './components/common/loader/Loader'
 import Login from './components/login/Login'
 import DefaultInstructions from './components/defaultInstructions/DefaultInstructions'
+import BuiltWith from './components/builtWith/BuiltWith'
 import './i18n'
 
 const emitter = Store.emitter
@@ -47,6 +48,15 @@ const App = ({ t }) => {
   const [refreshTimer, setRefreshTimer] = useState(null)
   const [loading, setLoading] = useState(true)
   const [isMobile, setIsMobile] = useState(window.innerWidth > 0 && window.innerWidth < 768)
+  const [openBuilt, setOpenBuilt] = useState(false)
+
+  const handleBuiltOpen = () => {
+    setOpenBuilt(true)
+  }
+
+  const handleBuiltClose = () => {
+    setOpenBuilt(false)
+  }
 
   const currentTheme = theme === 'light' ? lightTheme : theme === 'waifu' ? waifuTheme : darkTheme
 
@@ -200,6 +210,7 @@ const App = ({ t }) => {
               account={account}
               setModalOpen={setModalOpen}
               assets={assets}
+              handleBuiltOpen={handleBuiltOpen}
             />
             <Switch>
               <Route path='/vault'>
@@ -234,6 +245,12 @@ const App = ({ t }) => {
             </Switch>
           </Main>
         )}
+        <BuiltWith
+          store={store.getStore('builtWith')}
+          currentTheme={currentTheme}
+          openBuilt={openBuilt}
+          handleBuiltClose={handleBuiltClose}
+        />
         {modalOpen && <UnlockModal closeModal={() => setModalOpen(false)} modalOpen={modalOpen} />}
         {snackbarMessage && <Snackbar type={snackbarType} message={snackbarMessage} open={true} />} {/* TODO */}
         {loading && <Loader />}

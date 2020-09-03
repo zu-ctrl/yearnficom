@@ -35,6 +35,16 @@ export const Item = styled.a`
   line-height: 22px;
   text-align: center;
 `
+export const Button = styled.div`
+  padding: 3px;
+  margin: 3px 8px;
+  color: ${(p) => p.theme.footer.color};
+  font-family: 'PT Sans';
+  font-size: 14px;
+  line-height: 22px;
+  text-align: center;
+  cursor: pointer;
+`
 export const Shadow = styled.div`
   box-shadow: ${(p) => (p.shadowDisabled ? 'none' : p.theme.footer.shadow)};
   overflow: visible;

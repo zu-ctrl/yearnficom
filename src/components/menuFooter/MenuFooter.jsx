@@ -6,9 +6,9 @@ import DiscordIcon from '../icons/DiscordIcon'
 import TwitterIcon from '../icons/TwitterIcon'
 import MediumIcon from '../icons/MediumIcon'
 
-import { Container, FlexCenter, SocialWrapper, SocialLink, Menu, Item, Shadow } from './style'
+import { Container, FlexCenter, SocialWrapper, SocialLink, Menu, Item, Shadow, Button } from './style'
 
-const MenuFooter = ({ currentTheme, shadowDisabled }) => {
+const MenuFooter = ({ currentTheme, shadowDisabled, handleBuiltOpen }) => {
   const { linearIcon, footer } = currentTheme
   return (
     <Shadow shadowDisabled={shadowDisabled}>
@@ -37,7 +37,7 @@ const MenuFooter = ({ currentTheme, shadowDisabled }) => {
           <Item href='/'>Home</Item>
           <Item href='https://docs.yearn.finance/'>Resources</Item>
           <Item href='https://github.com/iearn-finance'>Code</Item>
-          <Item href='/'>Builtwith</Item>
+          <Button onClick={() => handleBuiltOpen()}>Builtwith</Button>
         </Menu>
       </Container>
     </Shadow>

@@ -27,7 +27,6 @@ const VaultInstructions = ({ currentTheme, isBeta }) => {
         </Text>
         <Image src={require('../../assets/vault_main-chart.png')} alt='vault chart' />
       </Wrapper>
-
       <Shadow shadowDisabled={shadowDisabled} />
     </Container>
   )

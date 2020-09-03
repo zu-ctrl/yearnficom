@@ -5,7 +5,7 @@ import MenuNav from '../menuNav/MenuNav'
 import MenuFooter from '../menuFooter/MenuFooter'
 import { Wrapper, ScrollContainer } from './style'
 
-const Menu = ({ history, currentTheme, account, setModalOpen, assets, isBeta, theme }) => {
+const Menu = ({ history, currentTheme, account, setModalOpen, assets, isBeta, theme, handleBuiltOpen }) => {
   const navigateTo = (route) => history.push(route)
   const currentPage = history.location.pathname.slice(1)
 
@@ -28,7 +28,7 @@ const Menu = ({ history, currentTheme, account, setModalOpen, assets, isBeta, th
           />
           <MenuNav currentTheme={currentTheme} navigateTo={navigateTo} currentPage={currentPage} />
         </ScrollContainer>
-        <MenuFooter shadowDisabled={shadowDisabled} currentTheme={currentTheme} />
+        <MenuFooter handleBuiltOpen={handleBuiltOpen} shadowDisabled={shadowDisabled} currentTheme={currentTheme} />
       </Wrapper>
     </>
   )
