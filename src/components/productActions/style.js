@@ -38,7 +38,6 @@ export const Shadow = styled.div`
   position: absolute;
   width: 100%;
   height: 23px;
-  background: #333;
   bottom: -30px;
   @media (max-width: 990px) {
     box-shadow: none;

@@ -30,7 +30,7 @@ import {
   SpanDescription,
 } from './style'
 
-const DefaultInstructions = ({ currentTheme }) => {
+const DefaultInstructions = ({ currentTheme, isBeta }) => {
   const { linearIcon, linearMiddleIcon, iconColor, iconGlowColor, defInstructions } = currentTheme
 
   const [shadowDisabled, setShadowDisabled] = useState(false)
@@ -40,7 +40,7 @@ const DefaultInstructions = ({ currentTheme }) => {
   }
   return (
     <Container>
-      <Wrapper onScroll={onScroll}>
+      <Wrapper onScroll={onScroll} isBeta={isBeta}>
         <AccordionContainer>
           <Accordion>
             <AccordionSummary

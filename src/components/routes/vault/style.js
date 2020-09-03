@@ -24,7 +24,6 @@ export const Shadow = styled.div`
     position: absolute;
     width: 100%;
     height: 23px;
-    background: #333;
     bottom: -40px;
   }
 `

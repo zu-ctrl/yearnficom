@@ -8,6 +8,7 @@ export const BannerWrapper = styled.div`
   align-items: center;
   justify-content: center;
   position: relative;
+  z-index: 5;
 `
 export const BetaTitle = styled.h5`
   font-family: 'PT Sans';

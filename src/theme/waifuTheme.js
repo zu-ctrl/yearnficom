@@ -74,6 +74,7 @@ export default {
   productTitle: '#080809',
   blackMenuBackground: '#F7F9FC',
   linearIcon: '#F3DEFF',
+  defTitle: '#9551BA',
   waifuLinearIcon: '#9551BA',
   linearMiddleIcon: '#9551BA',
   whiteSmoke: ' #080809',

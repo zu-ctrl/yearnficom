@@ -21,7 +21,11 @@ const Vault = ({ t, currentTheme, assets, currentAsset, setCurrentAsset, isBeta 
           currentTheme={currentTheme}
           setCurrentAsset={setCurrentAsset}
         />
-        {currentAsset ? <ProductActions isBeta={isBeta} currentAsset={currentAsset} /> : <VaultInstructions />}
+        {currentAsset ? (
+          <ProductActions isBeta={isBeta} currentAsset={currentAsset} />
+        ) : (
+          <VaultInstructions isBeta={isBeta} currentTheme={currentTheme} />
+        )}
       </MainWrapper>
       <Shadow shadowDisabled={shadowDisabled} />
     </Container>

@@ -75,6 +75,7 @@ export default {
   productTitle: '#1890FF',
   blackMenuBackground: '#111A21',
   linearIcon: '#69C0FF',
+  defTitle: '#69C0FF',
   linearMiddleIcon: '#40A9FF',
   whiteSmoke: ' #f3f4f5',
   greenApy: '#95DE64',

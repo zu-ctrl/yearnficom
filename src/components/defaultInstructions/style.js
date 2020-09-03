@@ -11,18 +11,14 @@ export const Shadow = styled.div`
   position: absolute;
   width: 100%;
   height: 23px;
-  background: #333;
   bottom: -45px;
-  @media (max-width: 990px) {
-    box-shadow: none;
-  }
 `
 export const Wrapper = styled.div`
   max-width: 694px;
   width: 100%;
   margin: 0 auto;
   padding: 0 25px;
-  height: 100vh;
+  height: ${(p) => (p.isBeta ? 'calc(100vh - 40px)' : '100vh')};
   overflow-y: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;

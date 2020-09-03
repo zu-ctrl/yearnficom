@@ -229,7 +229,7 @@ const App = ({ t }) => {
                 <Redirect to='/' />
               </Route>
               <Route path='/'>
-                <DefaultInstructions currentTheme={currentTheme} />
+                <DefaultInstructions isBeta={isBeta} currentTheme={currentTheme} />
               </Route>
             </Switch>
           </Main>
