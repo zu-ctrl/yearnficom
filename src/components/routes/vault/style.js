@@ -10,6 +10,11 @@ export const MainWrapper = styled.div`
     height: ${(p) => (p.isBeta ? 'calc(100vh - 40px)' : '100vh')};
     overflow-y: scroll;
     display: block;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    ::-webkit-scrollbar {
+      display: none;
+    }
   }
 `
 export const Shadow = styled.div`

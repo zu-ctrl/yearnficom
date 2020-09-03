@@ -185,7 +185,7 @@ export const SliderContainer = styled.div`
       visibility: visible;
     }
   }
-  .PrivateValueLabel-label-5 {
+  .MuiSlider-valueLabel {
     font-family: 'PT Sans';
     font-weight: bold;
     font-size: 14px;
@@ -194,8 +194,14 @@ export const SliderContainer = styled.div`
     letter-spacing: 0.02em;
     color: ${(p) => p.theme.slider.currentValue};
     text-shadow: ${(p) => p.theme.slider.shadow};
-    margin-left: -5px;
-    margin-bottom: -19px;
+    margin-left: 9px;
+    top: -23px;
+    display: flex;
+    align-items: center;
+    span {
+      background-color: transparent;
+      width: max-content;
+    }
     ::after {
       content: '%';
     }

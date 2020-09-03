@@ -74,7 +74,7 @@ export const SelectContainer = styled.div`
     border: none;
   }
   @media (max-width: 990px) {
-    max-width: 500px;
+    max-width: 400px;
     width: 100%;
     margin: 0 auto;
   }
