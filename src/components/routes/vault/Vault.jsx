@@ -5,7 +5,7 @@ import ProductActions from '../../productActions/ProductActions'
 import VaultInstructions from '../../vaultInstructions/VaultInstructions'
 import { Container, MainWrapper, Shadow } from './style'
 
-const Vault = ({ t, currentTheme, assets, currentAsset, setCurrentAsset, isBeta }) => {
+const Vault = ({ t, currentTheme, assets, currentAsset, setCurrentAsset, isBeta, theme }) => {
   const [shadowDisabled, setShadowDisabled] = useState(false)
 
   const onScroll = (e) => {
@@ -24,7 +24,7 @@ const Vault = ({ t, currentTheme, assets, currentAsset, setCurrentAsset, isBeta 
         {currentAsset ? (
           <ProductActions isBeta={isBeta} currentAsset={currentAsset} />
         ) : (
-          <VaultInstructions isBeta={isBeta} currentTheme={currentTheme} />
+          <VaultInstructions isBeta={isBeta} currentTheme={currentTheme} theme={theme} />
         )}
       </MainWrapper>
       <Shadow shadowDisabled={shadowDisabled} />

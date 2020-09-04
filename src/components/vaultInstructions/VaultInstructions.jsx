@@ -3,7 +3,7 @@ import MainLinearIcon from '../icons/MainLinearIcon'
 import VaultIcon from '../icons/VaultIcon'
 import { Container, Shadow, Wrapper, TitleContainer, FlexCenter, Text, TitleImportant, Image } from './style'
 
-const VaultInstructions = ({ currentTheme, isBeta }) => {
+const VaultInstructions = ({ currentTheme, isBeta, theme }) => {
   const { defTitle, linearMiddleIcon, iconGlowColor } = currentTheme
   const [shadowDisabled, setShadowDisabled] = useState(false)
 
@@ -25,7 +25,12 @@ const VaultInstructions = ({ currentTheme, isBeta }) => {
           is a diagram of how a couple might work in practice. Go ahead and choose the asset you want to deposit in the
           list to your left to get started!
         </Text>
-        <Image src={require('../../assets/vault_main-chart.png')} alt='vault chart' />
+        <Image
+          src={require(`../../assets/${
+            theme === 'dark' ? 'dark' : theme === 'light' ? 'light' : 'waifu'
+          }_vault_main-chart.png`)}
+          alt='vault chart'
+        />
       </Wrapper>
       <Shadow shadowDisabled={shadowDisabled} />
     </Container>

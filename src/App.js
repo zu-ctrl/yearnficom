@@ -222,6 +222,7 @@ const App = ({ t }) => {
                   setAccount={setAccount}
                   currentAsset={currentAsset}
                   setCurrentAsset={setCurrentAsset}
+                  theme={theme}
                 />
               </Route>
               <Route path='/zap'>
