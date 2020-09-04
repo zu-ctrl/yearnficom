@@ -37,8 +37,9 @@ export const Shadow = styled.div`
   box-shadow: ${(p) => (p.shadowDisabled ? 'none' : p.theme.mainShadow)};
   position: absolute;
   width: 100%;
-  height: 23px;
   bottom: -30px;
+  height: ${(p) => (p.shadowDisabled ? '0' : '23px')};
+  transition: all 0.5s ease;
   @media (max-width: 990px) {
     box-shadow: none;
   }

@@ -5,13 +5,15 @@ export const Container = styled.div`
   width: 100%;
   background: ${(p) => p.theme.defInstructions.bg};
   padding-bottom: 20px;
+  overflow: hidden;
 `
 export const Shadow = styled.div`
   box-shadow: ${(p) => (p.shadowDisabled ? 'none' : p.theme.mainShadow)};
   position: absolute;
   width: 100%;
-  height: 23px;
+  height: ${(p) => (p.shadowDisabled ? '0' : '23px')};
   bottom: -45px;
+  transition: all 0.5s ease;
 `
 export const Wrapper = styled.div`
   max-width: 694px;
