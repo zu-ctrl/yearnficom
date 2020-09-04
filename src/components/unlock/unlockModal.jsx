@@ -1,20 +1,22 @@
-import React, { Component } from 'react'
-import { DialogContent, Dialog, Slide } from '@material-ui/core'
+import React, { Component, forwardRef } from 'react'
+import { DialogContent, Slide } from '@material-ui/core'
 
 import Unlock from './unlock'
 
-function Transition(props) {
-  return <Slide direction='up' {...props} />
-}
+import { ModalContainer } from './style'
+
+const Transition = forwardRef(function Transition(props, ref) {
+  return <Slide direction='up' ref={ref} {...props} />
+})
 
 class UnlockModal extends Component {
   render() {
-    const { closeModal, modalOpen } = this.props
+    const { closeModal, modalOpen, currentTheme } = this.props
 
     const fullScreen = window.innerWidth < 450
 
     return (
-      <Dialog
+      <ModalContainer
         open={modalOpen}
         onClose={closeModal}
         fullWidth={true}
@@ -23,9 +25,9 @@ class UnlockModal extends Component {
         fullScreen={fullScreen}
       >
         <DialogContent>
-          <Unlock closeModal={closeModal} />
+          <Unlock currentTheme={currentTheme} closeModal={closeModal} />
         </DialogContent>
-      </Dialog>
+      </ModalContainer>
     )
   }
 }

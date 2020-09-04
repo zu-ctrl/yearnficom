@@ -251,7 +251,9 @@ const App = ({ t }) => {
           openBuilt={openBuilt}
           handleBuiltClose={handleBuiltClose}
         />
-        {modalOpen && <UnlockModal closeModal={() => setModalOpen(false)} modalOpen={modalOpen} />}
+        {modalOpen && (
+          <UnlockModal currentTheme={currentTheme} closeModal={() => setModalOpen(false)} modalOpen={modalOpen} />
+        )}
         {snackbarMessage && <Snackbar type={snackbarType} message={snackbarMessage} open={true} />} {/* TODO */}
         {loading && <Loader />}
       </IpfsRouter>

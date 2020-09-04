@@ -135,6 +135,10 @@ export const LogoButton = styled.div`
   display: flex;
   align-items: center;
 `
-export const SpanDescription = styled(Description)`
-  font-weight: normal;
+export const SpanDescription = styled.span`
+  font-family: 'PT Sans';
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: 0.02em;
+  color: ${(p) => p.theme.defInstructions.button.text};
 `

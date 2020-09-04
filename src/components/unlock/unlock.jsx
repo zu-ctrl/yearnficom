@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import { withStyles } from '@material-ui/core/styles'
-import { Typography, Button, CircularProgress } from '@material-ui/core'
-import CloseIcon from '@material-ui/icons/Close'
+import { CircularProgress } from '@material-ui/core'
 import { withNamespaces } from 'react-i18next'
+import CloseIcon from '../icons/CloseIcon'
 
 import { Web3ReactProvider, useWeb3React } from '@web3-react/core'
 import { Web3Provider } from '@ethersproject/providers'
 
 import { ERROR, CONNECTION_DISCONNECTED, CONNECTION_CONNECTED } from '../../constants/constants'
+
+import { Button, CloseButton, Image, ButtonText, ButtonContainer, DeactivateText, DeactivateButton } from './style'
 
 import Store from '../../stores/store'
 const emitter = Store.emitter
@@ -20,6 +22,7 @@ const styles = (theme) => ({
     height: 'auto',
     display: 'flex',
     position: 'relative',
+    scrollbarWidth: 'none',
   },
   contentContainer: {
     margin: 'auto',
@@ -145,13 +148,13 @@ class Unlock extends Component {
   }
 
   render() {
-    const { classes, closeModal, t } = this.props
-
+    const { classes, closeModal, t, currentTheme } = this.props
+    console.log(currentTheme)
     return (
       <div className={classes.root}>
-        <div className={classes.closeIcon} onClick={closeModal}>
-          <CloseIcon />
-        </div>
+        <CloseButton onClick={closeModal}>
+          <CloseIcon color={currentTheme.closeIcon} />
+        </CloseButton>
         <div className={classes.contentContainer}>
           <Web3ReactProvider getLibrary={getLibrary}>
             <MyComponent closeModal={closeModal} t={t} />
@@ -270,18 +273,8 @@ function MyComponent(props) {
         }
 
         return (
-          <div key={name} style={{ padding: '12px 0px', display: 'flex', justifyContent: 'space-between' }}>
+          <ButtonContainer key={name}>
             <Button
-              style={{
-                padding: '16px',
-                backgroundColor: 'white',
-                borderRadius: '1rem',
-                border: '1px solid #E1E1E1',
-                fontWeight: 500,
-                display: 'flex',
-                justifyContent: 'space-between',
-                minWidth: '250px',
-              }}
               variant='outlined'
               color='primary'
               onClick={() => {
@@ -289,31 +282,9 @@ function MyComponent(props) {
               }}
               disabled={disabled}
             >
-              <Typography
-                style={{
-                  margin: '0px 12px',
-                  color: 'rgb(1, 1, 1)',
-                  fontWeight: 500,
-                  fontSize: '1rem',
-                }}
-                variant={'h3'}
-              >
-                {display}
-              </Typography>
+              <ButtonText>{display}</ButtonText>
 
-              {!activating && !connected && (
-                <img
-                  style={{
-                    position: 'absolute',
-                    right: '20px',
-
-                    width: '30px',
-                    height: '30px',
-                  }}
-                  src={url}
-                  alt=''
-                />
-              )}
+              {!activating && !connected && <Image src={url} alt='' />}
               {activating && <CircularProgress size={15} style={{ marginRight: '10px' }} />}
               {!activating && connected && (
                 <div
@@ -327,39 +298,19 @@ function MyComponent(props) {
                 ></div>
               )}
             </Button>
-          </div>
+          </ButtonContainer>
         )
       })}
 
-      <div style={{ width: '252px', margin: '12px 0px' }}>
-        <Button
-          style={{
-            padding: '12px',
-            backgroundColor: 'white',
-            borderRadius: '20px',
-            border: '1px solid #E1E1E1',
-            fontWeight: 500,
-            minWidth: '250px',
-          }}
-          variant='outlined'
-          color='primary'
-          onClick={() => {
-            onDeactivateClicked(deactivate, connector)
-          }}
-        >
-          <Typography
-            style={{
-              marginLeft: '12px',
-              fontWeight: '700',
-              color: '#DC6BE5',
-            }}
-            variant={'h5'}
-            color='primary'
-          >
-            {t('Unlock.Deactivate')}
-          </Typography>
-        </Button>
-      </div>
+      <DeactivateButton
+        variant='outlined'
+        color='primary'
+        onClick={() => {
+          onDeactivateClicked(deactivate, connector)
+        }}
+      >
+        <DeactivateText>{t('Unlock.Deactivate')}</DeactivateText>
+      </DeactivateButton>
     </div>
   )
 }
