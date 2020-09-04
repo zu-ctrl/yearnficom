@@ -63,3 +63,6 @@ export const TextWhiteBalance = styled.p`
   text-align: center;
   color: ${(p) => p.theme.balance};
 `
+export const LogoButton = styled.div`
+  cursor: pointer;
+`

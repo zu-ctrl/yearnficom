@@ -25,6 +25,7 @@ const Menu = ({ history, currentTheme, account, setModalOpen, assets, isBeta, th
             account={account}
             setModalOpen={setModalOpen}
             assets={assets}
+            navigateTo={navigateTo}
           />
           <MenuNav currentTheme={currentTheme} navigateTo={navigateTo} currentPage={currentPage} />
         </ScrollContainer>

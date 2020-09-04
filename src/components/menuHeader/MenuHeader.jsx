@@ -18,15 +18,26 @@ import {
   TextBlueBalance,
   TextWhiteBalance,
   ButtonWrapper,
+  LogoButton,
 } from './style'
 
-const MenuHeader = ({ currentTheme, account, setModalOpen, assets, theme }) => {
+const MenuHeader = ({ currentTheme, account, setModalOpen, assets, theme, navigateTo }) => {
   const { loginIconColor, linearIcon, menu, arrowDown, waifuLinearIcon } = currentTheme
   const sortedAssetsByBalance = assets.sort((a, b) => parseFloat(b.balance) - parseFloat(a.balance))
   return (
     <>
       <Wrapper>
-        <FlexCenter>{theme === 'waifu' ? <YearnWaifuIcon /> : <YearnIcon />}</FlexCenter>
+        <FlexCenter>
+          {theme === 'waifu' ? (
+            <LogoButton onClick={() => navigateTo('/')}>
+              <YearnWaifuIcon />
+            </LogoButton>
+          ) : (
+            <LogoButton onClick={() => navigateTo('/')}>
+              <YearnIcon />
+            </LogoButton>
+          )}
+        </FlexCenter>
         <ButtonWrapper>
           <Ripples color={menu.ripples}>
             {theme === 'dark' ? (
