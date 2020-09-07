@@ -7,6 +7,7 @@ export const Asset = styled.div`
   padding: 8px 16px;
   cursor: pointer;
   display: flex;
+  margin-bottom: ${(p) => (p.select ? '1px' : '0')};
 `
 export const AssetWrapper = styled.div`
   margin-top: 8px;

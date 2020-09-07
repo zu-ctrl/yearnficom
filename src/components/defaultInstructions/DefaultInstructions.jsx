@@ -34,10 +34,13 @@ const DefaultInstructions = ({ currentTheme, isBeta }) => {
   const { linearIcon, linearMiddleIcon, iconColor, iconGlowColor, defInstructions } = currentTheme
 
   const [shadowDisabled, setShadowDisabled] = useState(false)
+  const [defOpacity, setDefOpacity] = useState(1)
 
   const onScroll = (e) => {
-    setShadowDisabled(e.target.scrollHeight - e.target.scrollTop - 50 <= e.target.clientHeight)
+    console.log(e)
+    // setShadowDisabled(e.target.scrollHeight - e.target.scrollTop - 50 <= e.target.clientHeight)
   }
+
   return (
     <Container>
       <Wrapper onScroll={onScroll} isBeta={isBeta}>

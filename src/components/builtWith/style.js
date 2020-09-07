@@ -24,6 +24,7 @@ export const ModalContainer = styled(Dialog)`
   }
 `
 export const Button = styled.a`
+  font-family: 'PT Sans';
   text-decoration: none;
   color: ${(p) => p.theme.menu.color};
   padding: 16px;

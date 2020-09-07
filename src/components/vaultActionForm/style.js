@@ -169,7 +169,6 @@ export const SliderContainer = styled.div`
     margin-left: -6px;
   }
   .MuiSlider-root {
-    /* color: transparent; */
     color: ${(p) => p.theme.slider.mark};
   }
   .MuiSlider-markActive {
@@ -201,6 +200,7 @@ export const SliderContainer = styled.div`
     span {
       background-color: transparent;
       width: max-content;
+      color: ${(p) => p.theme.slider.currentValue};
     }
     ::after {
       content: '%';

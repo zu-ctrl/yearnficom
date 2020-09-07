@@ -9,8 +9,9 @@ export const Shadow = styled.div`
   position: absolute;
   width: 100%;
   height: ${(p) => (p.shadowDisabled ? '0' : '23px')};
-  transition: all 0.5s ease;
   bottom: -45px;
+  transition: all 0.5s ease;
+  /* opacity: ${(p) => p.defOpacity}; */
 `
 export const Wrapper = styled.div`
   display: flex;
@@ -47,7 +48,7 @@ export const TitleImportant = styled.h3`
 export const FlexCenter = styled.div`
   display: flex;
   min-height: 70px;
-  height: 100%;
+  height: 70px;
   max-width: 379px;
   width: 100%;
   margin: 12px auto -69px;
@@ -62,8 +63,13 @@ export const Text = styled.p`
   max-width: 600px;
   width: 100%;
 `
-export const Image = styled.img`
+export const Image = styled.div`
+  max-width: 725px;
   width: 100%;
-  margin-top: 16px;
+  margin: 16px auto 0;
   padding-bottom: 40px;
+  svg {
+    width: 100%;
+    height: auto;
+  }
 `

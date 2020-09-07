@@ -40,6 +40,9 @@ export const AccordionContainer = styled.div`
   .MuiAccordion-rounded:last-child {
     border-radius: 6px;
   }
+  .MuiAccordionSummary-content.Mui-expanded {
+    margin: 12px 0;
+  }
   .MuiAccordion-rounded:first-child {
     border-radius: 6px;
   }
